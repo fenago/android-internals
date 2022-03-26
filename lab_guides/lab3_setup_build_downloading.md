@@ -52,17 +52,13 @@ up your client to access the Android source repository:
     directory.
 
     
-
-    ```
-    repo init -u https://android.googlesource.com/platform/manifest
-    ```
-
-
     Run the following commad in the terminal:
 
     
     ```
     sudo ln -s /usr/bin/python3 /usr/bin/python
+
+    repo init -u https://android.googlesource.com/platform/manifest
     ```
 
 

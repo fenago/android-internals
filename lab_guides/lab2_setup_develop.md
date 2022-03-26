@@ -95,34 +95,3 @@ distribution:
   sudo apt-get update
   sudo apt-get install repo
 ```
-
-After installation, verify that `repo version`
-reports something similar to the following when it's running in a
-regular directory. (A regular directory isn't part of a repo client; for
-example, it's your home directory.)
-
-Run this command:
-
-
-
-```
-repo version
-```
-
-Expect a report similar to this one:
-
-
-
-```
-<repo not installed>
-repo launcher version 2.15
-(from /usr/bin/repo)
-```
-
--   The `repo launcher version` number
-    reporting as 2.15 or higher indicates a correct version number and
-    proper installation.
--   `(from /usr/bin/repo)` indicates
-    installation from a package.
--   `(from /home/<>/bin/repo)` indicates
-    manual installation.
