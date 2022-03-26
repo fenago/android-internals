@@ -22,7 +22,7 @@ Emulator\'s high-level architecture. For more information about the
 emulator, see [Run apps on the Android
 Emulator](https://developer.android.com/studio/run/emulator){.external}.
 
-![](./setup_create_avd_files/emulator-design.png)
+![](./images/emulator-design.png)
 
 **Figure 1.** Android Emulator architecture
 
@@ -94,12 +94,11 @@ options](https://developer.android.com/studio/run/emulator-commandline#startup-o
 for more details about running the emulator. Figure 2 shows an example
 of the Android Emulator running an AVD.
 
-![Android Emulator running an
-AVD](./setup_create_avd_files/emulator-run-ui.png)
+![](./images/emulator-run-ui.png)
 
 **Figure 2.** Android Emulator running an AVD
 
-[Sharing AVD system images for others to use with Android Studio]{.devsite-heading role="heading" aria-level="2"} {#sharing_avd_system_images_for_others_to_use_with_android_studio data-text="Sharing AVD system images for others to use with Android Studio" role="presentation"}
+Sharing AVD system images for others to use with Android Studio
 -----------------------------------------------------------------------------------------------------------------
 
 Follow these instructions to share your AVD system images with others.

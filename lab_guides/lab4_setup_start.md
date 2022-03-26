@@ -50,9 +50,6 @@ to build the
 [Cuttlefish](https://source.android.com/setup/create/cuttlefish) virtual
 Android device for testing without a physical device.
 
-To build and update a physical device instead, choose another target and
-follow the instructions for [flashing
-devices](https://source.android.com/setup/build/running).
 
 1.  Set up your environment for building Android devices by running the
     following command from the root of your source code checkout:
