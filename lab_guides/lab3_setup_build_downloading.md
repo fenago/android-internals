@@ -45,19 +45,26 @@ up your client to access the Android source repository:
     git config --global user.email you@example.com
     ```
 
-3.  Run `repo init` to get the latest version
+3.  Run the following command in the terminal:
+
+    ```
+    sudo ln -s /usr/bin/python3 /usr/bin/python
+
+    ```
+
+    **Note:** If you get file already exist error. Run following command first and then above command again:
+
+    ```
+    sudo rm /usr/bin/python
+    ```
+
+4.  Run `repo init` to get the latest version
     of Repo with its most recent bug fixes. You must specify a URL for
     the manifest, which specifies where the various repositories
     included in the Android source are placed within your working
     directory.
 
-    
-    Run the following commad in the terminal:
-
-    
     ```
-    sudo ln -s /usr/bin/python3 /usr/bin/python
-
     repo init -u https://android.googlesource.com/platform/manifest
     ```
 
