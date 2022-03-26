@@ -81,30 +81,6 @@ Find the Android Gerrit review interface at
 and the code navigation interface at
 [android.googlesource.com](https://android.googlesource.com/).
 
-[Android Code Search]
----------------------------------------------------------------------
-
-[Android Code Search](https://cs.android.com/) allows you to
-search AOSP without downloading anything. You can use Code Search to
-view the AOSP source code, switch between open source branches, and
-navigate cross-references. For more information, see the Google
-Developers site for the [Code Search
-documentation](https://developers.google.com/code-search).
-
-[Other tools]
--------------------------------------------------------------
-
-[Android Studio](https://developer.android.com/studio/intro)
-is the official integrated development environment (IDE) for Android app
-development.
-
-[Android Debug Bridge (ADB)](https://source.android.com/setup/build/adb)
-lets you connect your development workstation directly to your Android
-device so you can install packages and evaluate your changes.
-
-For Android 10 and higher, use the [IntelliJ with
-AIDEgen](https://android.googlesource.com/platform/tools/asuite/+/refs/heads/master/aidegen/README.md)
-IDE for Android platform development.
 
 [Installing Repo]
 -----------------------------------------------------------------
@@ -115,36 +91,10 @@ Run these commands to use the official package from your Linux
 distribution:
 
 
-
-``` 
+```
   sudo apt-get update
   sudo apt-get install repo
 ```
-
-If those commands didn't work for your system--for example, you see that
-the package version is outdated, or there isn't an official package
-available from your Linux distribution, manually install Repo using the
-following commands:
-
-
-
-``` 
-export REPO=$(mktemp /tmp/repo.XXXXXXXXX)
-curl -o $ https://storage.googleapis.com/git-repo-downloads/repo
-gpg --recv-key 8BB9AD793E8E6153AF0F9A4416530D5E920F5C65
-curl -s https://storage.googleapis.com/git-repo-downloads/repo.asc | gpg --verify - $ ~/bin/repo
-```
-
-These commands set up a temp file, download repo to it, and verify that
-the key provided matches with the required key. If those are successful,
-the installation proceeds.
-
-**Note:** Keys are registered in
-[keys.openpgp.org](https://keys.openpgp.org/) and work by
-default for Debian-based distributions. If you can\'t download the key
-or if verification fails, consult your distribution\'s documentation for
-using Gnu Privacy Guard (GPG). For an additional resource, see the
-[GnuPG](https://gnupg.org/) website.
 
 After installation, verify that `repo version`
 reports something similar to the following when it's running in a
@@ -155,7 +105,7 @@ Run this command:
 
 
 
-``` 
+```
 repo version
 ```
 
@@ -163,7 +113,7 @@ Expect a report similar to this one:
 
 
 
-``` 
+```
 <repo not installed>
 repo launcher version 2.15
 (from /usr/bin/repo)
@@ -176,12 +126,3 @@ repo launcher version 2.15
     installation from a package.
 -   `(from /home/<>/bin/repo)` indicates
     manual installation.
-
-[Completing the installation]
------------------------------------------------------------------------------
-
-**Next:** To complete your full Repo Tool installation, see
-[Initializing a Repo
-client](https://source.android.com/setup/build/downloading#initializing-a-repo-client),
-on the [Downloading the
-Source](https://source.android.com/setup/build/downloading) page.

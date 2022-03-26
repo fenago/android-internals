@@ -25,9 +25,10 @@ up your client to access the Android source repository:
 
     
 
-    ``` 
-    mkdir WORKING_DIRECTORY
-    cd WORKING_DIRECTORY
+    ```
+    cd ~
+    mkdir aosp
+    cd aosp
     ```
 
 2.  Configure Git with your real name and email address. To use the
@@ -39,7 +40,7 @@ up your client to access the Android source repository:
 
     
 
-    ``` 
+    ```
     git config --global user.name Your Name
     git config --global user.email you@example.com
     ```
@@ -52,33 +53,18 @@ up your client to access the Android source repository:
 
     
 
-    ``` 
+    ```
     repo init -u https://android.googlesource.com/platform/manifest
     ```
 
 
-    If your Ubuntu LTS is a newly installed (vs. upgraded) Linux version:
+    Run the following commad in the terminal:
 
     
-
-    ``` 
+    ```
     sudo ln -s /usr/bin/python3 /usr/bin/python
     ```
 
-    If using Git version 2.19 or greater, you can specify
-    `--partial-clone` when performing
-    `repo init`. This makes use of Git\'s
-    [partial clone](https://crbug.com/git/2) capability to
-    only download Git objects when needed, instead of downloading
-    everything. Because using partial clones means that many operations
-    must communicate with the server, use the following if you\'re a
-    developer and you\'re using a network with low latency:
-
-    
-
-    ``` 
-    repo init -u https://android.googlesource.com/platform/manifest -b master --partial-clone --clone-filter=blob:limit=10M
-    ```
 
 A successful initialization ends with a message stating that Repo is
 initialized in your working directory. Your client directory now
@@ -99,7 +85,7 @@ To download the Android source tree to your working directory from the
 repositories as specified in the default manifest, run:
 
 
-``` 
+```
 sudo sysctl -w net.ipv4.tcp_window_scaling=0
 repo sync -j1
 ```

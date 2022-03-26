@@ -18,27 +18,11 @@ So sit back, fire up a terminal, and let\'s make history.
 [Goals]
 -------------------------------------------------------
 
-The mission of this codelab is twofold:
+The mission of this codelab is:
 
-1.  To give you a small taste of what the developer workflow is like for
+1.  To give you a idea of what the developer workflow is like for
     Android engineers working on the platform (the operating system).
-2.  Encourage you to provide
-    [feedback](https://issuetracker.google.com/issues/new?component=191476)
-    around Android\'s tools, documentation, and the developer workflow.
 
-[Prerequisites]
----------------------------------------------------------------
-
-The list of requirements for this codelab are derived from those for
-general platform
-([AOSP](https://source.android.com/setup/build/requirements))
-development. To take this codelab, set up the following:
-
--   Physical Linux workstation meeting all [public
-    requirements](https://source.android.com/setup/build/requirements#hardware-requirements).
--   [Repo and the Git
-    configuration](https://source.android.com/setup/develop) required to
-    edit the Android code base.
 
 [Environment]
 -------------------------------------------------------------
@@ -50,74 +34,6 @@ session. Specifically, these include the
 `source build/envsetup.sh` and
 `lunch` commands.
 
-[Set up workstation]
---------------------------------------------------------------------
-
-1.  [Install the necessary
-    packages](https://source.android.com/setup/build/initializing) on
-    your workstation.
-2.  While still in a terminal, [install Repo and gain
-    credentials](https://source.android.com/setup/build/downloading) to
-    all Git repositories.
-
-[Initialize and sync the code]
-------------------------------------------------------------------------------
-
-1.  Navigate into your home directory:
-
-    
-
-    ``` 
-    cd ~
-    ```
-
-2.  Create a local working subdirectory within it:
-
-    
-
-    ``` 
-    mkdir aosp
-    ```
-
-3.  Navigate into the directory:
-
-    
-
-    ``` 
-    cd aosp
-    ```
-
-4.  Initialize the AOSP repository source code master branch (the
-    default):
-
-    
-
-    ``` 
-    repo init -u https://android.googlesource.com/platform/manifest
-    ```
-
-5.  Enter or accept your Git credentials (name, email address).
-
-6.  Sync the source code:
-
-    
-
-    ``` 
-    repo sync -j8
-    ```
-
-Initial syncs can take an hour or more.
-
-Each repo checkout is represented by a [manifest
-file](https://gerrit.googlesource.com/git-repo/+/master/docs/manifest-format.md).
-It\'s permissable to have more than 1 repo checkout at a time, so long
-as they exist in distinct directories. But note that each checkout and
-build amounts to roughly 300 GB usage (and growing), so either limit
-yourself to 2 repo checkouts, or augment your system with a secondary
-drive.
-
-TIP: To increase free space, delete a branch directory and start anew
-from directory creation, like this: `rm -rf aosp2.`
 
 [Build the code]
 ----------------------------------------------------------------
@@ -143,7 +59,9 @@ devices](https://source.android.com/setup/build/running).
 
     
 
-    ``` 
+    ```
+    cd ~/aosp
+    
     source build/envsetup.sh
     ```
 
@@ -151,7 +69,7 @@ devices](https://source.android.com/setup/build/running).
 
     
 
-    ``` 
+    ```
     lunch aosp_cf_x86_64_phone-userdebug
     ```
 
@@ -160,7 +78,7 @@ devices](https://source.android.com/setup/build/running).
 
     
 
-    ``` 
+    ```
     m
     ```
 
@@ -184,7 +102,7 @@ Then
 
     
 
-    ``` 
+    ```
     acloud create --local-image --local-instance
     ```
 
@@ -204,7 +122,7 @@ while you use your device by employing the Android Debug Bridge (adb)
 
 
 
-``` 
+```
 adb logcat
 ```
 
@@ -219,7 +137,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     cd frameworks/native
     ```
 
@@ -227,7 +145,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     repo start <some-name> .
     ```
 
@@ -236,7 +154,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     aosp/frameworks/native/services/surfaceflinger/SurfaceFlinger.cpp
     ```
 
@@ -244,7 +162,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     postFrame();
     postComposition();
     ```
@@ -253,7 +171,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     postFrame();
     postComposition();
     mClientColorMatrix = mat4(vec4,
@@ -265,7 +183,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     m
     ```
 
@@ -273,7 +191,7 @@ Update the source code following this example
 
     
 
-    ``` 
+    ```
     adb root
     adb remount
     adb sync
@@ -308,7 +226,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     atest DevCodelabTest
     ```
 
@@ -317,7 +235,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     atest --info android.test.example.devcodelab.DevCodelabTest#testHelloWorld
     ```
 
@@ -325,7 +243,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     platform_testing/tests/example/devcodelab
     ```
 
@@ -335,7 +253,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     src/android/test/example/devcodelab/DevCodelabTest.java
     ```
 
@@ -343,7 +261,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     platform_testing/tests/example/devcodelab/src/android/test/example/devcodelab/DevCodelabTest.java
     ```
 
@@ -351,7 +269,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     Assert.assertTrue(false)
     ```
 
@@ -359,7 +277,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     Assert.assertTrue(true)
     ```
 
@@ -367,7 +285,7 @@ To use the test, follow these instructions:
 
     
 
-    ``` 
+    ```
     atest DevCodelabTest
     ```
 
@@ -398,7 +316,7 @@ respond to changes.
 
     
 
-    ``` 
+    ```
     cd frameworks/native
     repo start codelab .
     git add .
@@ -409,7 +327,7 @@ respond to changes.
 
     
 
-    ``` 
+    ```
     Android codelab change
     Test: manual atest
     ```
@@ -418,7 +336,7 @@ respond to changes.
 
     
 
-    ``` 
+    ```
     repo upload
     ```
 
@@ -426,7 +344,7 @@ If you\'re successful, you see a message resembling this one:
 
 
 
-``` 
+```
 Upload project frameworks/native/ to remote branch master:
   branch codelab ( 1 commit, Wed Aug 7 09:32:33 2019 -0700):
          ff46b36d android codelab change
@@ -448,7 +366,7 @@ Go to the link, printed in the terminal, that resembles this one:
 
 
 
-``` 
+```
 https://android-review.googlesource.com/c/platform/frameworks/native/+/1098432
 ```
 
@@ -473,7 +391,7 @@ subdirectories):
 
 
 
-``` 
+```
 repo abandon codelab .
 ```
 
@@ -485,7 +403,7 @@ the following to reset the file:
 
 
 
-``` 
+```
 git reset HEAD tests/example/devcodelab/src/android/test/example/devcodelab/DevCodelabTest.java
 git checkout .
 ```

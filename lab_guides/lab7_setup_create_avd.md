@@ -42,10 +42,10 @@ To build and run an AVD system image:
 
 1.  Download the Android source:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     mkdir aosp-master; cd aosp-master
     repo init -u
     repo sync -j24
@@ -61,32 +61,31 @@ To build and run an AVD system image:
     Android](https://source.android.com/setup/build/building) device
     system image. For example, to build a x86 32-bit AVD:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     mkdir aosp-master; cd aosp-master
     source ./build/envsetup.sh
     lunch sdk_phone_x86
     make -j32
     ```
 
-    If you prefer to build an x86 64-bit AVD, run `lunch`{translate="no"
-    dir="ltr"} for the 64-bit target:
+    If you prefer to build an x86 64-bit AVD, run `lunch` for the 64-bit target:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     lunch sdk_phone_x86_64
     ```
 
 3.  Run the AVD system image in the Android Emulator:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     emulator
     ```
 
@@ -107,38 +106,36 @@ Follow these instructions to share your AVD system images with others.
 They can use your AVD system images with [Android
 Studio](https://developer.android.com/studio) to develop and test apps.
 
-1.  Make additional `sdk`{translate="no" dir="ltr"} and
-    `sdk_repo`{translate="no" dir="ltr"} packages:
+1.  Make additional `sdk` and
+    `sdk_repo` packages:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     $ make -j32 sdk sdk_repo
     ```
 
     This creates two files under
-    `aosp-master/out/host/linux-x86/sdk/sdk_phone_x86`{translate="no"
-    dir="ltr"}:
+    `aosp-master/out/host/linux-x86/sdk/sdk_phone_x86`:
 
     -   `sdk-repo-linux-system-images-eng.[username].zip`{translate="no"
         dir="ltr"}
-    -   `repo-sys-img.xml`{translate="no" dir="ltr"}
+    -   `repo-sys-img.xml`
 
 2.  Host the file
-    `sdk-repo-linux-system-images-eng.[username].zip`{translate="no"
-    dir="ltr"} somewhere accessible to your users, and get its URL to
+    `sdk-repo-linux-system-images-eng.[username].zip` somewhere accessible to your users, and get its URL to
     use as the **AVD System Image URL**.
 
-3.  Edit `repo-sys-img.xml`{translate="no" dir="ltr"} accordingly:
+3.  Edit `repo-sys-img.xml` accordingly:
 
-    -   Update `<sdk:url>`{translate="no" dir="ltr"} to your **AVD
+    -   Update `<sdk:url>` to your **AVD
         System Image URL**.
     -   See
         [sdk-sys-img-03.xsd](https://android.googlesource.com/platform/prebuilts/devtools/+/refs/heads/master/repository/sdk-sys-img-03.xsd)
         to learn about other updates to the file.
 
-4.  Host `repo-sys-img.xml`{translate="no" dir="ltr"} somewhere
+4.  Host `repo-sys-img.xml` somewhere
     accessible to your users, and get its URL to use as the **Custom
     Update Site URL**.
 
@@ -167,13 +164,12 @@ changes, or by cherry picking from [these
 CLs](https://android-review.googlesource.com/q/topic:%22AVD+Multi-display%22+(status:open%20OR%20status:merged)).
 
 -   Add multi-display provider to the build by adding these lines to
-    file `build/target/product/sdk_phone_x86.mk`{translate="no"
-    dir="ltr"}:
+    file `build/target/product/sdk_phone_x86.mk`:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     PRODUCT_ARTIFACT_PATH_REQUIREMENT_WHITELIST := \
         system/lib/libemulator_multidisplay_jni.so \
         system/lib64/libemulator_multidisplay_jni.so \
@@ -182,13 +178,12 @@ CLs](https://android-review.googlesource.com/q/topic:%22AVD+Multi-display%22+(st
     ```
 
 -   Enable the Multi-Display feature flag by adding this line to file
-    `device/generic/goldfish/data/etc/advancedFeatures.ini`{translate="no"
-    dir="ltr"}:
+    `device/generic/goldfish/data/etc/advancedFeatures.ini`:
 
-    ::: {.devsite-code-buttons-container role="group" aria-label="Action buttons"}
-    :::
+    
+    
 
-    ``` {translate="no" dir="ltr" is-upgraded=""}
+    ```
     MultiDisplay = on
     ```
 

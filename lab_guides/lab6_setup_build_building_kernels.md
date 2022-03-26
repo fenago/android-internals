@@ -37,19 +37,19 @@ Download the sources for the appropriate branch:
 
 
 
-``` 
+```
 mkdir android-kernel && cd android-kernel
 ```
 
 
 
-``` 
+```
 repo init -u https://android.googlesource.com/kernel/manifest -b BRANCH
 ```
 
 
 
-``` 
+```
 repo sync
 ```
 
@@ -122,7 +122,7 @@ Then build the kernel with this:
 
 
 
-``` 
+```
 build/build.sh
 ```
 
@@ -147,7 +147,7 @@ This example shows a kernel image configuration:
 
 
 
-``` 
+```
 BUILD_CONFIG=common/build.config.gki.x86_64 build/build.sh
 ```
 
@@ -155,7 +155,7 @@ This example shows a module configuration (Cuttlefish and Emulator):
 
 
 
-``` 
+```
 BUILD_CONFIG=common-modules/virtual-device/build.config.cuttlefish.x86_64 build/build.sh
 ```
 
@@ -165,7 +165,7 @@ kernel\'s modules, use this build configuration:
 
 
 
-``` 
+```
 BUILD_CONFIG=common-modules/virtual-device/build.config.virtual_device.x86_64 build/build.sh
 ```
 
@@ -186,7 +186,7 @@ it\'s set up via `device/common/populate-new-device.sh`. For example:
 
 
 
-``` 
+```
 export TARGET_PREBUILT_KERNEL=DIST_DIR/Image.lz4-dtb
 ```
 
@@ -199,7 +199,7 @@ To boot the kernel without flashing:
 
 
 
-``` 
+```
 adb reboot bootloader
 fastboot boot Image.lz4-dtb
 ```
@@ -244,7 +244,7 @@ following snippet added to the local `build.config` disables LTO persistently wh
 
 
 
-``` 
+```
 POST_DEFCONFIG_CMDS="check_defconfig && update_debug_config"
 function update_debug_config() {
     $/.config \
@@ -271,7 +271,7 @@ correct version as part of the commit message:
 
 
 
-``` 
+```
 cd $AOSP/device/VENDOR/NAME
 git log --max-count=1
 ```
@@ -286,7 +286,7 @@ following command against the kernel file:
 
 
 
-``` 
+```
 file kernel
 ```
 
@@ -294,7 +294,7 @@ For `Image.lz4-dtb` files, run:
 
 
 
-``` 
+```
 grep -a 'Linux version' Image.lz4-dtb
 ```
 
@@ -308,7 +308,7 @@ the associated Android release will work.
 
 
 
-``` 
+```
 tools/mkbootimg/unpack_bootimg.py --boot_img=boot-5.4-gz.img
 mv tools/mkbootimg/out/ramdisk gki-ramdisk.lz4
 ```
@@ -327,7 +327,7 @@ kernel build, you can generate a boot image by executing:
 
 
 
-``` 
+```
 BUILD_BOOT_IMG=1 SKIP_VENDOR_BOOT=1 KERNEL_BINARY=Image GKI_RAMDISK_PREBUILT_BINARY=gki-ramdisk.lz4 BUILD_CONFIG=common/build.config.gki.aarch64 build/build.sh
 ```
 
@@ -337,7 +337,7 @@ If you\'re working with x86-based architecture, replace
 
 
 
-``` 
+```
 BUILD_BOOT_IMG=1 SKIP_VENDOR_BOOT=1 KERNEL_BINARY=bzImage GKI_RAMDISK_PREBUILT_BINARY=gki-ramdisk.lz4 BUILD_CONFIG=common/build.config.gki.x86_64 build/build.sh
 ```
 

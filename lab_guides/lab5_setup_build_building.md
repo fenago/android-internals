@@ -12,7 +12,7 @@ Initialize the environment with the `envsetup.sh` script:
 
 
 
-``` 
+```
 source build/envsetup.sh
 ```
 
@@ -20,7 +20,7 @@ or
 
 
 
-``` 
+```
 . build/envsetup.sh
 ```
 
@@ -46,7 +46,7 @@ To see the full list of available commands, run:
 
 
 
-``` 
+```
 hmm
 ```
 
@@ -68,7 +68,7 @@ debugging enabled:
 
 
 
-``` 
+```
 lunch aosp_arm-eng
 ```
 
@@ -120,7 +120,7 @@ task count that it thinks is optimal for your system.
 
 
 
-``` 
+```
 m
 ```
 
@@ -147,8 +147,7 @@ provides some pseudotargets for special purposes. Some examples are:
 -   **`mmma`** - Builds all of the modules in
     the supplied directories, and their dependencies.
 -   **`croot`** - `cd` to the top of the tree.* - `m clean`{translate="no" deletes all of the output and intermediate files for this
-    configuration. This is the same as `rm -rf out/`{translate="no"
-    dir="ltr"}.
+    configuration. This is the same as `rm -rf out/`.
 
 Run `m help` to see what other pseudotargets
 `m` provides.
@@ -184,6 +183,6 @@ To run the emulator, type:
 
 
 
-``` 
+```
 emulator
 ```
