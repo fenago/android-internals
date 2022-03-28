@@ -13,6 +13,8 @@ Initialize the environment with the `envsetup.sh` script:
 
 
 ```
+cd ~/aosp
+
 source build/envsetup.sh
 ```
 
@@ -160,27 +162,10 @@ Because you\'ve already selected your build target with
 `lunch`, it\'s unlikely to run on a different
 target than it was built for.
 
-**Note:** Remember to obtain proprietary binaries or your build won\'t
-boot successfully on your target hardware. Sometimes the source might
-have different binaries for different builds and branches. If you obtain
-binary blobs at this point, you need to unpack them,
-`m installclean`, and rebuild. For more
-information on this process, see [Obtaining proprietary
-binaries](https://source.android.com/setup/build/downloading#obtaining-proprietary-binaries).
-
-### [Flashing with fastboot]
-
-To flash a device, use `fastboot`, which
-should be included in your path after a successful build. See [Flashing
-a
-device](https://source.android.com/setup/build/running#flashing-a-device)
-for instructions.
-
 ### [Emulating an Android device]
 
 The emulator is added to your path automatically by the build process.
 To run the emulator, type:
-
 
 
 ```

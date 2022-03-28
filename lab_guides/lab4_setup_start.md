@@ -104,7 +104,7 @@ Update the source code following this example
     
 
     ```
-    repo start <some-name> .
+    repo start androidinternals .
     ```
 
 3.  Edit `SurfaceFlinger.cpp` to include the
