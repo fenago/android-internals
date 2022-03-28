@@ -82,46 +82,7 @@ Android device for testing without a physical device.
 Expect the first build to take hours. Subsequent builds take
 significantly less time.
 
-[Create an Acloud instance]
----------------------------------------------------------------------------
 
-[Acloud](https://android.googlesource.com/platform/tools/acloud/+/refs/heads/master/README.md)
-is a command-line tool in AOSP that assists users in creating virtual
-Android devices, in this case Cuttlefish.
-
-If you\'re in the same terminal session used to [build the
-code](https://source.android.com/setup/start#build_the_code), proceed.
-Otherwise, rerun the `envsetup.sh` script and
-the same `lunch` command you used there first.
-Then
-
-1.  Create an Acloud local instance with:
-
-    
-
-    ```
-    acloud create --local-image --local-instance
-    ```
-
-2.  Accept updates to required packages.
-
-3.  If prompted, restart your workstation for all changes to take
-    effect.
-
-4.  Select the Cuttlefish device.
-
-You should be greeted with a VNC session containing an Android device!
-
-You can interact with the virtual device on your workstation using your
-mouse and keyboard. You can also follow the activity within the logs
-while you use your device by employing the Android Debug Bridge (adb)
-`logcat` command:
-
-
-
-```
-adb logcat
-```
 
 Make a change
 -------------
@@ -171,43 +132,17 @@ Update the source code following this example
     ```
     postFrame();
     postComposition();
-    mClientColorMatrix = mat4(vec4,
-                              vec4);
+    mClientColorMatrix = mat4(vec4{1.0f, 0.0f, 0.0f, 0.0f}, vec4{0.0f, -1.0f, 0.0f, 0.0f},
+                            vec4{0.0f, 0.0f, -1.0f, 0.0f}, vec4{0.0f, 1.0f, 1.0f, 1.0f});
     updateColorMatrixLocked();
     ```
 
 6.  Build the code:
-
-    
+  
 
     ```
     m
     ```
-
-7.  Update the build on the device:
-
-    
-
-    ```
-    adb root
-    adb remount
-    adb sync
-    adb reboot
-    acloud reconnect
-    ```
-
-8.  If you\'re prompted to select a device, choose the one that shows
-    the shortest elapsed time. (This is probably the last one in the
-    list you see.) To see all virtual device instances, use the
-    `acloud list` and
-    `acloud list -v` commands.
-
-Verify that you see a color change on your selected device similar to
-what shows in Figure 1.
-
-![](./images/device-after-color-transform-matrix-change.png)
-
-**Figure 1.** Screen appearance after successful color change
 
 [Test your code]
 ----------------------------------------------------------------
