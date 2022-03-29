@@ -45,18 +45,29 @@ up your client to access the Android source repository:
     git config --global user.email you@example.com
     ```
 
-3.  Run the following command in the terminal:
-
-    ```
-    sudo ln -s /usr/bin/python3 /usr/bin/python
-
-    ```
-
-    **Note:** If you get file already exist error. Run following command first and then above command again:
+3.  Run the following command(s) in the terminal:
 
     ```
     sudo rm /usr/bin/python
+
+    sudo ln -s /usr/bin/python2.7 /usr/bin/python
+
+    repo init -u https://android.googlesource.com/platform/manifest
     ```
+
+![](./images/i1.png)
+
+**Note:** You will get error in repo init. You can ignore the error for now.
+
+4. Run the following command in the terminal to create symlink for `python3`:
+
+    ```
+    sudo rm /usr/bin/python
+
+    sudo ln -s /usr/bin/python3 /usr/bin/python
+    ```
+
+![](./images/i2.png)
 
 4.  Run `repo init` to get the latest version
     of Repo with its most recent bug fixes. You must specify a URL for
@@ -64,15 +75,20 @@ up your client to access the Android source repository:
     included in the Android source are placed within your working
     directory.
 
+
     ```
     repo init -u https://android.googlesource.com/platform/manifest
     ```
 
+**Note:**
 
 A successful initialization ends with a message stating that Repo is
 initialized in your working directory. Your client directory now
 contains a `.repo` directory where files such
 as the manifest are kept.
+
+![](./images/i3.png)
+
 
 [ Downloading the Android source tree ]
 ---------------------------------------
