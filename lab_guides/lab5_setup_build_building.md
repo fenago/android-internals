@@ -98,8 +98,6 @@ to provide a good user experience. Otherwise, the eng build has behavior
 similar to the user and userdebug builds so that device developers can
 see how the code behaves in those environments.
 
-For more information about building for and running on actual hardware,
-see [Flashing Devices](https://source.android.com/setup/build/running).
 
 ### [tapas]
 

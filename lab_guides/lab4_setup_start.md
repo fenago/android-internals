@@ -104,7 +104,7 @@ Update the source code following this example
     
 
     ```
-    repo start androidinternals .
+    repo start codelab .
     ```
 
 3.  Edit `SurfaceFlinger.cpp` to include the
@@ -144,169 +144,6 @@ Update the source code following this example
     m
     ```
 
-[Test your code]
-----------------------------------------------------------------
-
-This portion of the codelab utilizes an example test that\'s in the
-source tree and is failing. This employs
-[Atest](https://source.android.com/compatibility/tests/development/atest)
-for running the test locally and testing the code.
-
-To use the test, follow these instructions:
-
-1.  Run:
-
-    
-
-    ```
-    atest DevCodelabTest
-    ```
-
-2.  The test will fail. To fix it, find the source code of the failing
-    test:
-
-    
-
-    ```
-    atest --info android.test.example.devcodelab.DevCodelabTest#testHelloWorld
-    ```
-
-3.  Then look here
-
-    
-
-    ```
-    platform_testing/tests/example/devcodelab
-    ```
-
-4.  To get the file to edit, take the name of the test in
-    `android.test.example.devcodelab.DevCodelabTest` and replace the `.` with
-    `/`, to get this result:
-
-    
-
-    ```
-    src/android/test/example/devcodelab/DevCodelabTest.java
-    ```
-
-5.  Then edit
-
-    
-
-    ```
-    platform_testing/tests/example/devcodelab/src/android/test/example/devcodelab/DevCodelabTest.java
-    ```
-
-    to replace
-
-    
-
-    ```
-    Assert.assertTrue(false)
-    ```
-
-    with
-
-    
-
-    ```
-    Assert.assertTrue(true)
-    ```
-
-6.  Run the test again to verify you fixed the issue:
-
-    
-
-    ```
-    atest DevCodelabTest
-    ```
-
-[Upload your code for review]
------------------------------------------------------------------------------
-
-Repo simplifies Git usage by bundling commands such as
-`git clone` to work across numerous Git
-repositories (or projects) at once.
-
-See [Source Control Tools](https://source.android.com/setup/develop) for
-overviews of Git and Repo, with links to full documentation on working
-with Android source code. See the [AOSP
-repository](https://android.googlesource.com/) for the full
-list of Git projects and the individual projects (paths) for branches
-associated with each project.
-
-For code review of your projects in Git, you\'ll use the
-[Gerrit](https://gerrit-review.googlesource.com/Documentation/)
-web-based code review system.
-
-**Important:** Ensure that you\'re signed into Gerrit to view and
-respond to changes.
-
-1.  Assuming you made your changes in the
-    `frameworks/native` project, run these
-    commands to upload them:
-
-    
-
-    ```
-    cd frameworks/native
-    repo start codelab .
-    git add .
-    git commit
-    ```
-
-2.  For your commit message, enter the following:
-
-    
-
-    ```
-    Android codelab change
-    Test: manual atest
-    ```
-
-3.  Upload your change:
-
-    
-
-    ```
-    repo upload
-    ```
-
-If you\'re successful, you see a message resembling this one:
-
-
-
-```
-Upload project frameworks/native/ to remote branch master:
-  branch codelab ( 1 commit, Wed Aug 7 09:32:33 2019 -0700):
-         ff46b36d android codelab change
-to https://android-review.googlesource.com/ (y/N)? y
-remote: Processing changes: refs: 1, new: 1, done
-remote:
-remote: SUCCESS
-remote:
-remote:   https://android-review.googlesource.com/c/platform/frameworks/native/+/1098432 android codelab change [NEW]
-remote:
-To https://android-review.googlesource.com/platform/frameworks/native
- * [new branch]          codelab -> refs/for/master
-```
-
-[View your change in Gerrit]
-----------------------------------------------------------------------------
-
-Go to the link, printed in the terminal, that resembles this one:
-
-
-
-```
-https://android-review.googlesource.com/c/platform/frameworks/native/+/1098432
-```
-
-This completes the starter codelab for Android platform development. See
-[Submitting
-Patches](https://source.android.com/setup/contribute/submit-patches) for
-next steps, and for full details on developing Android, see the rest of
-this site.
 
 [Revert your change]
 --------------------------------------------------------------------
@@ -322,23 +159,10 @@ Then abandon the associated temporary branch in the
 subdirectories):
 
 
-
 ```
 repo abandon codelab .
 ```
 
-Remember also to revert the changes you made to the test file. Since you
-didn\'t `repo start`,
-`git commit`, and `repo upload` the change, you can reset the file itself. Assuming you\'re
-in the `aosp/platform_testing directory`, use
-the following to reset the file:
-
-
-
-```
-git reset HEAD tests/example/devcodelab/src/android/test/example/devcodelab/DevCodelabTest.java
-git checkout .
-```
 
 At this point, you\'re done! Nice work!
 
