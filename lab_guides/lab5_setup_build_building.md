@@ -71,7 +71,7 @@ debugging enabled:
 
 
 ```
-lunch aosp_arm-eng
+lunch aosp_car_x86-userdebug
 ```
 
 If run with no arguments, `lunch` prompts you

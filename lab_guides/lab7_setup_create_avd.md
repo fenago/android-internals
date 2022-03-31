@@ -40,35 +40,19 @@ building AVD system images.
 
 To build and run an AVD system image:
 
-1.  Download the Android source:
-
-    
-    
-
-    ```
-    mkdir aosp-master; cd aosp-master
-    repo init -u
-    repo sync -j24
-    ```
-
-    If you want to build other Android versions, you can find their
-    branch names in the [public Android
-    repository](https://android.googlesource.com/platform/manifest/+refs).
-    They map to [Android Codenames, Tags, and Build
-    Numbers](https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds).
+1.  Make sure the Android source is downloaded in `~/aosp` folder.
 
 2.  Build an AVD system image. This is the same process as [building an
     Android](https://source.android.com/setup/build/building) device
     system image. For example, to build a x86 32-bit AVD:
 
-    
-    
+
 
     ```
-    mkdir aosp-master; cd aosp-master
+    cd ~/aosp
     source ./build/envsetup.sh
     lunch sdk_phone_x86
-    make -j32
+    make -j6
     ```
 
     If you prefer to build an x86 64-bit AVD, run `lunch` for the 64-bit target:
@@ -89,8 +73,7 @@ To build and run an AVD system image:
     emulator
     ```
 
-See the [Command-line startup
-options](https://developer.android.com/studio/run/emulator-commandline#startup-options)
+See the [Command-line startup options](https://developer.android.com/studio/run/emulator-commandline#startup-options)
 for more details about running the emulator. Figure 2 shows an example
 of the Android Emulator running an AVD.
 
