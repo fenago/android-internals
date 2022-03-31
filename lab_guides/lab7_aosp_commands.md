@@ -2,11 +2,23 @@
 
 In this lab, we will learn some of the AOSP commands which are pretty useful when you work with the terminal window. 
 
-So, here are some of common AOSP commands:
+
+**Note:**
+
+Initialize the environment with the `envsetup.sh` script:
+
+```
+cd ~/aosp
+
+source build/envsetup.sh
+```
+
+
+Here are some of common AOSP commands:
 
 ![](./images/aosp1.png)
 
-The first one here is the `gettop` command so this basically prints the top **aosp directory**. Let's quickly try this in the terminal window. Go to the device common folder, type `gettop` that prints the top aosp folder.
+The first one here is the `gettop` command so this basically prints the top **aosp directory**. Let's quickly try this in the terminal window. Go to the `device/common` folder, type `gettop` that prints the top aosp folder.
 
 ```
 cd ~/aosp/device/common
@@ -14,7 +26,9 @@ cd ~/aosp/device/common
 gettop
 ```
 
-Right? From this particular path I am in device common, right? If I need to go directly to another folder, go to `frameworks/base`. So I could simply use cd $(gettop) will print you the top folder path and from there you put a /framework/base.
+![](./images/aosp5.png)
+
+Right? From this particular path I am in `device/common` folder, right? If I need to go directly to another folder, go to `frameworks/base`. So I could simply use cd $(gettop) will print you the top folder path and from there you put a /framework/base.
 
 ```
 cd $(gettop)/frameworks/base
@@ -38,7 +52,7 @@ pwd
 Let's do another example. Go to `build/blueprint` folder:
 
 ```
-cd ~/build/blueprint
+cd ~/aosp/build/blueprint
 ```
 
 Type `croot` in the terminal again and you should be back in aosp root folder.
@@ -50,15 +64,15 @@ pwd
 ```
 
 
-Next command is `mm`. So, `mm` command is basically build the package in the current folder. Now, from aosp, let's go to `packages/apps/Dailer` folder:
+Next command is `mm`. So, `mm` command is basically build the package in the current folder. Now, from aosp, let's go to `packages/apps/HTMLViewer` folder:
 
 ```
-cd ~/aosp/packages/apps/Dailer
+cd ~/aosp/packages/apps/HTMLViewer
 
 ls
 ```
 
-Let's open `AndroidManifes.xml` and add a new blank line and save it. Now type `mm` command in the terminal, it will only build the dailer app. From the logs, you can see that it is only building dailer app.
+Let's open `AndroidManifest.xml` and add a new blank line and save it. Now type `mm` command in the terminal, it will only build the HTMLViewer app. From the logs, you can see that it is only building HTMLViewer app.
 
 ![](./images/aosp2.png)
 
