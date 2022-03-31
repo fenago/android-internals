@@ -88,15 +88,13 @@ Siilarly, let's try the `jgrep` command by typing following command in the termi
 
 ![](./images/aosp3.png)
 
-As you can see, these are all java files. Now, let's try `resgrep` command:
-
-`resgrep network`
-
-![](./images/aosp4.png)
+As you can see, these are all java files.
 
 Another useful command is `godir`. It will help you go to a directory having the provided file.
 
 `godir SystemServer.java`
+
+![](./images/aosp6.png)
 
 Now, you should be in the directory where `SystemServer.java` exists: `pwd`
 
