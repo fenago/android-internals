@@ -12,12 +12,6 @@ how to use Atest to run Android tests.
 To run Atest, follow the steps in the sections below to set up your
 environment.
 
-### [Set environment variable]
-
-Set test\_suite for
-[Soong](https://source.android.com/compatibility/tests/development/blueprints)
-or LOCAL\_COMPATIBILITY\_SUITE for Make per [Packaging build script
-rules](https://source.android.com/compatibility/tests/development/test-mapping#packaging_build_script_rules).
 
 ### [Run envsetup.sh]
 
@@ -65,85 +59,7 @@ atest test-to-run [optional-arguments]
 Below are the most commonly used arguments. A complete list is available
 through `atest --help`.
 
-
-  ---------------------------------------------------------------------------------------------------------------
-          Option          Long option                                         Description
-  ----------------------- --------------------------------------------------- -----------------------------------
-    `-b`{translate="no"   `--build`                 Builds test targets. (default)
-        dir="ltr"}                                                            
-
-    `-i`{translate="no"   `--install`               Installs test artifacts (APKs) on
-        dir="ltr"}                                                            device. (default)
-
-    `-t`{translate="no"   `--test`                  Runs the tests. (default)
-        dir="ltr"}                                                            
-
-    `-s`{translate="no"   `--serial`                Runs the tests on the specified
-        dir="ltr"}                                                            device. One device can be tested at
-                                                                              a time.
-
-    `-d`{translate="no"   `--disable-teardown`      Disables test teardown and cleanup.
-        dir="ltr"}                                                            
-
-                          `--info`                  Shows the relevant info of the
-                                                                              specified targets and exits.
-
-                          `--dry-run`               Dry runs atest without building,
-                                                                              installing and running tests in
-                                                                              actuality
-
-    `-m`{translate="no"   `--rebuild-module-info`   Forces a rebuild of the
-        dir="ltr"}                                                            `module-info.json`{translate="no"
-                                                                              dir="ltr"} file.
-
-    `-w`{translate="no"   `--wait-for-debugger`     Waits for debugger prior to
-        dir="ltr"}                                                            execution. Only for instrumentation
-                                                                              tests.
-
-    `-v`{translate="no"   `--verbose`               Displays DEBUG level logging.
-        dir="ltr"}                                                            
-
-                          `--iterations`            Loop-runs tests until the max
-                                                                              iteration is reached. (10 by
-                                                                              default)
-
-                          `--rerun-until-failure [COUNT=10]`{translate="no"   Reruns all tests until a failure
-                          dir="ltr"}                                          occurs or the max iteration is
-                                                                              reached. (10 by default)
-
-                          `--retry-any-failure [COUNT=10]`{translate="no"     Reruns failed tests until passed or
-                          dir="ltr"}                                          the max iteration is reached. (10
-                                                                              by default)
-
-                          `--start-avd`             Automatically creates an AVD and
-                                                                              runs tests on the virtual device.
-
-                          `--acloud-create`         Creates AVDs using the
-                                                                              `acloud command.`{translate="no"
-                                                                              dir="ltr"}
-
-                          `--[CUSTOM_ARGS]`         Specifies custom args for the test
-                                                                              runners.
-
-    `-a`{translate="no"   `--all-abi`               Runs the tests for all available
-        dir="ltr"}                                                            device architectures.
-
-                          `--host`                  Runs the test completely on the
-                                                                              host without a device.\
-                                                                              (Note: Running a host test that
-                                                                              requires a device with
-                                                                              `--host`
-                                                                              will fail.)
-
-                          `--flakes-info`           Shows the test result with flakes
-                                                                              info.
-
-                          `--history`               Shows the test result in
-                                                                              chronological order.
-
-                          `--latest-result`         Prints the latest test result.
-  ---------------------------------------------------------------------------------------------------------------
-
+![](./images/5.png)
 
 ### [Tests to run]
 
@@ -203,7 +119,7 @@ atest CtsVideoTestCases
 
 To run a single class within a module, use **Module:Class**. **Module**
 is the same as described in [Module
-name](https://source.android.com/compatibility/tests/development/atest#module_name).
+name].
 **Class** is the name of the test class in the `.java`{translate="no"
 dir="ltr"} file and can be the fully qualified class name or the basic
 name.

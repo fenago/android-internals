@@ -7,7 +7,7 @@ Source Control Tools
 Working with Android code requires using both **Git** (an open-source
 version-control system) and **Repo** (a Google-built
 repository-management tool that runs on top of Git). See the [Source
-Control Workflow](https://source.android.com/setup/create/coding-tasks)
+Control Workflow]
 page for a summary of regular actions you can take, such as uploading
 changes for review.
 
@@ -24,16 +24,11 @@ replaceable, and wanted interesting components to have a life of their
 own, outside of Android. Google first chose a distributed revision
 control system, then narrowed it down to Git.
 
-For more details on Git, refer to this [Git
-Documentation](https://git-scm.com/documentation).
-
 [Repo]
 ------------------------------------------------------
 
 [Repo](https://gerrit.googlesource.com/git-repo/+/refs/heads/master/README.md)
-unifies Git repositories when necessary, performs uploads to the [Gerrit
-revision control
-system](https://android-review.googlesource.com/), and
+unifies Git repositories when necessary, performs uploads to the [Gerrit revision control system](https://android-review.googlesource.com/), and
 automates parts of the Android development workflow.
 
 The Repo Launcher provides a Python script that initializes a checkout
@@ -53,18 +48,7 @@ Repo working directory.
 
 In most situations, you can use Git instead of Repo, or mix Repo and Git
 commands to form complex commands. However, using Repo for basic
-across-network operations makes your work much simpler. For more details
-on Repo, see the [Repo Command
-Reference](https://source.android.com/setup/develop/repo), [Repo
-README](https://gerrit.googlesource.com/git-repo/+/refs/heads/master/README.md),
-the [Preupload
-Hooks](https://android.googlesource.com/platform/tools/repohooks/+/refs/heads/master/README.md)
-(tests) that can be enabled in Repo, and [general docs in
-AOSP](https://gerrit.googlesource.com/git-repo/+/master/docs/).
-
-To download and install the **Repo Launcher** from *git-repo-
-downloads*, see [Installing
-Repo](https://source.android.com/setup/develop#installing-repo).
+across-network operations makes your work much simpler.
 
 [Gerrit]
 --------------------------------------------------------

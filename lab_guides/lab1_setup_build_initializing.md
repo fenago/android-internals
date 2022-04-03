@@ -5,34 +5,11 @@ Establishing a Build Environment
 This section describes how to set up your local work environment to
 build the Android source files. You must use Linux; building under
 either MacOS or Windows isn\'t supported. Keep in mind the important
-change to the `/usr/bin/python` binary as
-well.
+change to the `/usr/bin/python` binary as well.
 
-For an overview of the entire code-review and code-update process, see
-[](https://source.android.com/setup/contribute/life-of-a-patch).
 
-**Note:** All commands in this site are preceded by a dollar sign (\$)
-to differentiate them from output or entries within files. Use the
-*Click to copy* feature located at the top right of each command box to
-copy all lines without the dollar signs, or triple-click each line to
-copy it individually without the dollar sign.
-
-Choosing a branch
--------------------------------------------------------------------
-
-Some requirements for the build environment are determined by the
-version of the source code that you plan to compile. For a full list of
-available branches, see [Build
-Numbers](https://source.android.com/setup/start/build-numbers). You can
-also choose to download and build the latest source code (called
-`master`), in which case you simply omit the
-branch specification when you initialize the repository.
-
-After selecting a branch, follow the appropriate instructions below to
-set up your build environment.
-
-[Setting up a Linux build environment]
---------------------------------------------------------------------------------------
+Setting up a Linux build environment
+-------------------------------------
 
 These instructions apply to all branches, including
 `master`.
@@ -45,10 +22,14 @@ For Gingerbread (2.3.x) and higher versions, including the
 `master` branch, a 64-bit environment is
 required. Older versions can be compiled on 32-bit systems.
 
-**Note:** See
-[Requirements](https://source.android.com/setup/build/requirements) for
-the complete list of hardware and software requirements, then follow the
-detailed instructions for Ubuntu below.
+**Hardware requirements**
+
+Your development workstation should meet or exceed these hardware requirements:
+
+- A 64-bit environment is required for Android 2.3.x (Gingerbread) and higher versions, including the master branch. You can compile older versions on 32-bit systems.
+- At least 250GB of free disk space to check out the code and an extra 150 GB to build it. If you conduct multiple builds, you need additional space.
+- At least 16 GB of available RAM is required, but Google recommends 64 GB.
+
 
 ### Installing required packages (Ubuntu 18.04)
 

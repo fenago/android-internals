@@ -16,7 +16,7 @@ Android Emulator allows you to run emulations of Android devices on
 Windows, macOS or Linux machines. The Android Emulator runs the Android
 operating system in a virtual machine called an Android Virtual Device
 (AVD). The AVD contains the full [Android software
-stack](https://source.android.com/devices/architecture), and it runs as
+stack], and it runs as
 if it were on a physical device. Figure 1 is a diagram of the Android
 Emulator\'s high-level architecture. For more information about the
 emulator, see [Run apps on the Android
@@ -26,24 +26,20 @@ Emulator](https://developer.android.com/studio/run/emulator){.external}.
 
 **Figure 1.** Android Emulator architecture
 
-[Building AVD images]
----------------------------------------------------------------------
+Building AVD images
+---------------------
 
 Each AVD includes an Android system image, which runs in that AVD. The
 AVD Manager includes some system images. And you can build custom AVD
 system images from your source code and create device emulations to run
 them.
 
-**Note:** You need to [establish a build
-environment](https://source.android.com/setup/build/initializing) before
-building AVD system images.
 
 To build and run an AVD system image:
 
 1.  Make sure the Android source is downloaded in `~/aosp` folder.
 
-2.  Build an AVD system image. This is the same process as [building an
-    Android](https://source.android.com/setup/build/building) device
+2.  Build an AVD system image. This is the same process as building an Android device
     system image. For example, to build a x86 32-bit AVD:
 
 

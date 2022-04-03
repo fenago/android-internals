@@ -9,15 +9,11 @@ changes to the source and when the changes were made. This page
 describes how to download the source tree for a specific Android code
 line.
 
-To start with a factory image for a specific device instead of
-downloading the source, see [Selecting a device
-build](https://source.android.com/setup/build/running#selecting-device-build).
 
-[ Initializing a Repo client ]
-------------------------------------------------------------------------------
+Initializing a Repo client
+--------------------------
 
-After [installing the Repo
-Launcher](https://source.android.com/setup/develop#installing-repo), set
+After installing the Repo Launcher, set
 up your client to access the Android source repository:
 
 1.  Create an empty directory to hold your working files. Give it any
@@ -112,8 +108,5 @@ repo sync -j1
 The Android source files are downloaded in your working directory under
 their project names.
 
-To suppress output, pass the `-q` (quiet)
-flag. See the [Repo Command Reference](https://source.android.com/setup/develop/repo) for all
-options.
-
+**Note:** To suppress output, pass the `-q` (quiet) flag.
 

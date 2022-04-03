@@ -39,15 +39,14 @@ session. Specifically, these include the
 ----------------------------------------------------------------
 
 To build Android, you must select a
-[target](https://source.android.com/setup/build/building#choose-a-target)
+[target]
 device type to build with the `lunch` command.
 A target is a device permutation, such as a specific model or form
 factor.
 
 The device target included below,
 `aosp_cf_x86_64_phone-userdebug`, enables you
-to build the
-[Cuttlefish](https://source.android.com/setup/create/cuttlefish) virtual
+to build the Cuttlefish virtual
 Android device for testing without a physical device.
 
 
@@ -63,17 +62,14 @@ Android device for testing without a physical device.
     ```
 
 2.  Pass the build target to the lunch command, like this:
-
     
 
     ```
     lunch aosp_cf_x86_64_phone-userdebug
     ```
 
-3.  [Build](https://source.android.com/setup/build/building#build-the-code)
-    the code from anywhere in your checkout with:
+3.  Build the code from anywhere in your checkout with:
 
-    
 
     ```
     m

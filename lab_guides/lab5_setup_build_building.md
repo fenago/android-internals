@@ -28,16 +28,10 @@ or
 
 See the script at
 [platform/build/envsetup.sh](https://android.googlesource.com/platform/build/+/refs/heads/master/envsetup.sh)
-for descriptions of related commands, including
-[lunch](https://source.android.com/setup/build/building#lunch) for
-selecting device targets and
-[tapas](https://source.android.com/setup/build/building#tapas) for
-building unbundled apps, such as the [reference TV
-app](https://source.android.com/devices/tv/reference-tv-app).
+
 
 You need to reissue this command after every `repo sync` to pick up any changes to that script. Note that replacing
-`source` (a
-single dot) saves a few characters, and the short form is more commonly
+`source` (a single dot) saves a few characters, and the short form is more commonly
 used in documentation.
 
 The `envsetup.sh` script imports several
@@ -76,7 +70,7 @@ lunch aosp_car_x86-userdebug
 
 If run with no arguments, `lunch` prompts you
 to choose a target from the menu. See [Selecting a device
-build](https://source.android.com/setup/build/running#selecting-device-build)
+build]
 for the build configurations of all existing devices.
 
 All build targets take the form `BUILD-BUILDTYPE`, where `BUILD` is a codename
@@ -88,9 +82,7 @@ referring to the particular feature combination.
 The userdebug build should behave the same as the user build, with the
 ability to enable additional debugging that normally violates the
 security model of the platform. This makes the userdebug build good for
-user testing with greater diagnosis capabilities. When developing with
-the userdebug build, follow the [userdebug
-guidelines](https://source.android.com/setup/develop/new-device#userdebug-guidelines).
+user testing with greater diagnosis capabilities..
 
 The eng build prioritizes engineering productivity for engineers who
 work on the platform. The eng build turns off various optimizations used
