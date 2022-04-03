@@ -5,8 +5,8 @@ Building Android
 
 Follow these instructions to begin building Android.
 
-[Setting up the environment]
-----------------------------------------------------------------------------
+Setting up the environment
+---------------------------
 
 Initialize the environment with the `envsetup.sh` script:
 
@@ -46,10 +46,10 @@ To see the full list of available commands, run:
 hmm
 ```
 
-[Choosing a target]
--------------------------------------------------------------------
+Choosing a target
+------------------
 
-### [lunch]
+### lunch
 
 Choose which target to build with `lunch`.
 `lunch   product_name-build_variant` selects
@@ -91,7 +91,7 @@ similar to the user and userdebug builds so that device developers can
 see how the code behaves in those environments.
 
 
-### [tapas]
+### tapas
 
 The `tapas` command configures the build of
 unbundled apps. It selects individual apps to be built by the Android
@@ -102,8 +102,8 @@ images for a device.
 Run `tapas help` for more information on the
 command.
 
-[Building the code]
--------------------------------------------------------------------
+Building the code
+-----------------
 
 This section is a quick summary to ensure that setup is complete.
 
@@ -144,15 +144,15 @@ provides some pseudotargets for special purposes. Some examples are:
 Run `m help` to see what other pseudotargets
 `m` provides.
 
-[Running the build]
--------------------------------------------------------------------
+Running the build
+-----------------
 
 You can either run your build on an emulator or flash it on a device.
 Because you\'ve already selected your build target with
 `lunch`, it\'s unlikely to run on a different
 target than it was built for.
 
-### [Emulating an Android device]
+### Emulating an Android device
 
 The emulator is added to your path automatically by the build process.
 To run the emulator, type:

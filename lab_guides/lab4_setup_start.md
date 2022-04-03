@@ -15,8 +15,8 @@ through direct work in the Android Open Source Project (AOSP).
 
 So sit back, fire up a terminal, and let\'s make history.
 
-[Goals]
--------------------------------------------------------
+Goals
+-----
 
 The mission of this codelab is:
 
@@ -24,8 +24,8 @@ The mission of this codelab is:
     Android engineers working on the platform (the operating system).
 
 
-[Environment]
--------------------------------------------------------------
+Environment
+-----------
 
 Typically, users build and develop on the workstation directly. Because
 you may be working in various terminals, and many of the commands used
@@ -35,8 +35,8 @@ session. Specifically, these include the
 `lunch` commands.
 
 
-[Build the code]
-----------------------------------------------------------------
+Build the code
+--------------
 
 To build Android, you must select a
 [target]

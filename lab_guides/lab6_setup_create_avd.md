@@ -69,9 +69,7 @@ To build and run an AVD system image:
     emulator
     ```
 
-See the [Command-line startup options](https://developer.android.com/studio/run/emulator-commandline#startup-options)
-for more details about running the emulator. Figure 2 shows an example
-of the Android Emulator running an AVD.
+Figure 2 shows an example of the Android Emulator running an AVD.
 
 ![](./images/emulator-run-ui.png)
 

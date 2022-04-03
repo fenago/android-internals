@@ -11,8 +11,8 @@ Control Workflow]
 page for a summary of regular actions you can take, such as uploading
 changes for review.
 
-[Git]
------------------------------------------------------
+Git
+----
 
 Git handles large projects that are distributed over multiple
 repositories. Android uses Git for local operations such as local
@@ -24,8 +24,8 @@ replaceable, and wanted interesting components to have a life of their
 own, outside of Android. Google first chose a distributed revision
 control system, then narrowed it down to Git.
 
-[Repo]
-------------------------------------------------------
+Repo
+----
 
 [Repo](https://gerrit.googlesource.com/git-repo/+/refs/heads/master/README.md)
 unifies Git repositories when necessary, performs uploads to the [Gerrit revision control system](https://android-review.googlesource.com/), and
@@ -50,8 +50,8 @@ In most situations, you can use Git instead of Repo, or mix Repo and Git
 commands to form complex commands. However, using Repo for basic
 across-network operations makes your work much simpler.
 
-[Gerrit]
---------------------------------------------------------
+Gerrit
+------
 
 [Gerrit](https://gerrit-review.googlesource.com/Documentation/)
 is a web-based code review system for projects that use Git. Gerrit

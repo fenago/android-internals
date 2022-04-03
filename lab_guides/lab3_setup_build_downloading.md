@@ -27,14 +27,8 @@ up your client to access the Android source repository:
     cd aosp
     ```
 
-2.  Configure Git with your real name and email address. To use the
-    Gerrit code-review tool, you need an email address that\'s connected
-    with a [registered Google
-    account](https://www.google.com/accounts). Ensure that
-    this is a live address where you can receive messages. The name that
-    you provide here shows up in attributions for your code submissions.
+2.  Configure Git with name and email address.
 
-    
 
     ```
     git config --global user.name Your Name
@@ -86,8 +80,8 @@ as the manifest are kept.
 ![](./images/i3.png)
 
 
-[ Downloading the Android source tree ]
----------------------------------------
+Downloading the Android source tree
+-----------------------------------
 
 
 More rarely, Linux clients experience connectivity issues, getting stuck
