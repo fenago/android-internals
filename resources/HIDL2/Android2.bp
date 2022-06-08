@@ -1,0 +1,16 @@
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "eightman_cpu_tester",
+    srcs: ["CpuTest.cpp"],
+    vendor: true,
+
+    shared_libs: [
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "vendor.eightman.cpu@1.0",
+    ],
+}
