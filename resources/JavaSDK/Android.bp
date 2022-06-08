@@ -1,0 +1,12 @@
+java_sdk_library {
+    name: "com.eightman",
+    vendor: true,
+
+    srcs: [
+        "java/**/*.java",
+    ],
+
+    sdk_version: "current",
+    compile_dex: true,
+    api_packages: ["com.eightman"],
+}
