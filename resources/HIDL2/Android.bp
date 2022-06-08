@@ -1,0 +1,18 @@
+cc_binary {
+    relative_install_path: "hw",
+    name: "vendor.eightman.cpu@1.0-service",
+    init_rc: ["vendor.eightman.cpu@1.0-service.rc"],
+    srcs: ["service.cpp", "Cpu.cpp"],
+    vendor: true,
+    vintf_fragments: ["vendor.eightman.cpu@1.0-service.xml"],
+
+    shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
+        "liblog",
+        "libhwbinder",
+        "libutils",
+        "libhardware",
+        "vendor.eightman.cpu@1.0",
+    ],
+}
