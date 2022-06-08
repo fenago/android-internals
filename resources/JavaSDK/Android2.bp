@@ -1,0 +1,54 @@
+java_sdk_library {
+    name: "com.eightman",
+    vendor: true,
+
+    srcs: [
+        "java/**/*.java",
+    ],
+
+    sdk_version: "current",
+    compile_dex: true,
+    api_packages: ["com.eightman"],
+}
+
+filegroup {
+    name: "com.eightman.api.public.latest",
+    srcs: [
+        "api/current.txt",
+    ],
+}
+
+filegroup {
+    name: "com.eightman-removed.api.public.latest",
+    srcs: [
+        "api/removed.txt",
+    ],
+}
+
+filegroup {
+    name: "com.eightman.api.system.latest",
+    srcs: [
+        "api/system-current.txt",
+    ],
+}
+
+filegroup {
+    name: "com.eightman-removed.api.system.latest",
+    srcs: [
+        "api/system-removed.txt",
+    ],
+}
+
+filegroup {
+    name: "com.eightman-incompatibilities.api.public.latest",
+    srcs: [
+        "api/incompatibilities.txt",
+    ],
+}
+
+filegroup {
+    name: "com.eightman-incompatibilities.api.system.latest",
+    srcs: [
+        "api/system-incompatibilities.txt",
+    ],
+}
