@@ -1,0 +1,35 @@
+cc_library_shared {
+    name: "libeightman",
+    vendor: true,
+
+    defaults: ["libeightman-libs"],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+    ],
+
+    srcs: [
+        "com_eightman_Cpu.cpp",
+        "onload.cpp",
+    ],
+}
+
+cc_defaults {
+    name: "libeightman-libs",
+
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libutils",
+        "vendor.eightman.cpu@1.0"
+    ],
+
+    header_libs: [
+        "jni_headers",
+    ],
+}
