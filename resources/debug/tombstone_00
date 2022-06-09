@@ -1,0 +1,402 @@
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'generic/aosp_cf_x86_phone/vsoc_x86:S/AOSP.MASTER/eng.gilzha.20210321.151233:userdebug/test-keys'
+Revision: '0'
+ABI: 'x86'
+Timestamp: 2021-04-29 02:35:05.575029742-0800
+pid: 389, tid: 394, name: Binder:389_1  >>> /vendor/bin/hw/vendor.eightman.cpu-service <<<
+uid: 1000
+signal 8 (SIGFPE), code 1 (FPE_INTDIV), fault addr 0x62767444
+    eax 00000002  ebx 62768b48  ecx eb9ffd4f  edx eba00400
+    edi 00000006  esi eb9ffd50
+    ebp eb9ffd28  esp eb9ffd00  eip 62767444
+
+backtrace:
+      #00 pc 00003444  /vendor/bin/hw/vendor.eightman.cpu-service (aidl::vendor::eightman::cpu::Cpu::setScalingGovernor(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool*)+244) (BuildId: b45824c3821d7cb9c479a474053b1a9f)
+      #01 pc 0000368f  /vendor/lib/vendor.eightman.cpu-V1-ndk_platform.so (aidl::vendor::eightman::cpu::_aidl_onTransact(AIBinder*, unsigned int, AParcel const*, AParcel*)+447) (BuildId: d9a7b9ace9231363dcb7d9774babc941)
+      #02 pc 0000a03a  /system/lib/libbinder_ndk.so (ABBinder::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+170) (BuildId: ab9399c5cd3b2b43964f69247d071538)
+      #03 pc 0000a470  /system/lib/libbinder_ndk.so (non-virtual thunk to ABBinder::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+48) (BuildId: ab9399c5cd3b2b43964f69247d071538)
+      #04 pc 00048ec1  /system/lib/libbinder.so (android::BBinder::transact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+209) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #05 pc 00053729  /system/lib/libbinder.so (android::IPCThreadState::executeCommand(int)+1449) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #06 pc 000530b9  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+169) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #07 pc 00053c2f  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+79) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #08 pc 00084599  /system/lib/libbinder.so (android::PoolThread::threadLoop()+41) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #09 pc 00013116  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+358) (BuildId: 23e76cc122df5aa9e5b726c70a2452f9)
+      #10 pc 000127ec  /system/lib/libutils.so (thread_data_t::trampoline(thread_data_t const*)+476) (BuildId: 23e76cc122df5aa9e5b726c70a2452f9)
+      #11 pc 000e7744  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+100) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #12 pc 00078d27  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+71) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+
+memory near ebx (/vendor/bin/hw/vendor.eightman.cpu-service):
+    62768b20 6ffffffe 0000061c 6fffffff 00000003  ...o.......o....
+    62768b30 00000000 00000000 62766770 627689d4  ........pgvb..vb
+    62768b40 ecaeb774 ec6765b0 00004a00 00000000  t....eg..J......
+    62768b50 00000000 ebef1320 ecba6b60 ebe613c0  .... ...`k......
+    62768b60 ec8f5b20 ec4e5840 ebee49d0 ecae7ce0   [..@XN..I...|..
+    62768b70 ec664080 ec60de20 ec8f6680 ec8f14d0  .@f. .`..f......
+    62768b80 ec8f5c50 ec6610d0 ebf15f80 ec4e5930  P\....f.._..0YN.
+    62768b90 ec4e58e0 ec4e5a30 ec625690 ebf16550  .XN.0ZN..Vb.Pe..
+    62768ba0 ebf2e060 ec624f10 ec61ec30 ec64db00  `....Ob.0.a...d.
+    62768bb0 ec64d1f0 ec629fe0 ec624f60 ec60dcc0  ..d...b.`Ob...`.
+    62768bc0 ebef5940 ec661110 ec661c50 ec660fa0  @Y....f.P.f...f.
+    62768bd0 ebf228a0 ec8f6160 ec8f65c0 ebf6dd20  .(..`a...e.. ...
+    62768be0 ebf44a60 ebe0c430 ec663ce0 ebf1a8e0  `J..0....<f.....
+    62768bf0 ebee4870 ec8f5e60 ebf7f480 ebef8590  pH..`^..........
+    62768c00 ebf453c0 ebf7ddd0 ecae7d30 ec661420  .S......0}.. .f.
+    62768c10 ec8efd00 ec8efdc0 ec8efc50 ec8efcb0  ........P.......
+
+memory near ecx ([anon:stack_and_tls:394]):
+    eb9ffd20 ecd002b0 ecaea6b4 eb9ffd88 ecae7690  .............v..
+    eb9ffd30 eb9ffd50 ecd002b0 eb9ffd58 eb9ffd4f  P.......X...O...
+    eb9ffd40 ebcc0b60 ebd00070 00000000 00c77732  `...p.......2w..
+    eb9ffd50 00000000 ebcc0b60 6e657314 72652064  ....`....send er
+    eb9ffd60 00726f72 eb880f30 c7ea3dde 00000000  ror.0....=......
+    eb9ffd70 eb840c14 eccbdcdc eb9ffe18 00000002  ................
+    eb9ffd80 ebc803d0 ec8f9300 eb9ffe18 ec8ef03b  ............;...
+    eb9ffd90 ebc803d0 00000002 eb9ffde8 eb9ffdd8  ................
+    eb9ffda0 ebfa0380 00000053 eb880f40 eb9ffdc0  ....S...@.......
+    eb9ffdb0 80000001 eb840c14 00000000 ebeeb3c1  ................
+    eb9ffdc0 ebf8735f eccbdcdc eb9ffe08 ecc67563  _s..........cu..
+    eb9ffdd0 80000001 00000000 ebc803d0 eb9fff10  ................
+    eb9ffde0 00000000 ebf94fb8 ebc803d0 eb9fff50  .....O......P...
+    eb9ffdf0 00000000 eb880f40 c7ea3dde eb840bc0  ....@....=......
+    eb9ffe00 eb840c50 eccbdcdc c7ea3dde eb9fff50  P........=..P...
+    eb9ffe10 eb9fff10 ec8f9300 eb9ffe58 ec8ef471  ........X...q...
+
+memory near edx ([anon:stack_and_tls:394]):
+    eba003e0 00000000 00000000 00000000 00000000  ................
+    eba003f0 00000000 00000000 00000000 00000000  ................
+    eba00400 00000000 00000000 00000000 00000000  ................
+    eba00410 00000000 00000000 00000000 00000000  ................
+    eba00420 00000000 00000000 00000000 00000000  ................
+    eba00430 00000000 00000000 00000000 00000000  ................
+    eba00440 00000000 00000000 00000000 00000000  ................
+    eba00450 00000000 00000000 00000000 00000000  ................
+    eba00460 00000000 00000000 00000000 00000000  ................
+    eba00470 00000000 eba004b0 00000000 00000000  ................
+    eba00480 00000000 00000000 eba00488 eba001e0  ................
+    eba00490 00000000 00000000 00000000 c7ea3dde  .............=..
+    eba004a0 ebfaa580 00000000 ebebed3c eba004b0  ........<.......
+    eba004b0 00000000 00000000 00000001 eb840bc0  ................
+    eba004c0 00000000 00000000 00000000 00000000  ................
+    eba004d0 00000000 00000000 00000000 00000000  ................
+
+memory near ebp ([anon:stack_and_tls:394]):
+    eb9ffd00 eb9ffd59 0000000a eba004fe ec8f1728  Y...........(...
+    eb9ffd10 ebc803d0 eba04010 c7ea3dde 00000000  .....@...=......
+    eb9ffd20 ecd002b0 ecaea6b4 eb9ffd88 ecae7690  .............v..
+    eb9ffd30 eb9ffd50 ecd002b0 eb9ffd58 eb9ffd4f  P.......X...O...
+    eb9ffd40 ebcc0b60 ebd00070 00000000 00c77732  `...p.......2w..
+    eb9ffd50 00000000 ebcc0b60 6e657314 72652064  ....`....send er
+    eb9ffd60 00726f72 eb880f30 c7ea3dde 00000000  ror.0....=......
+    eb9ffd70 eb840c14 eccbdcdc eb9ffe18 00000002  ................
+    eb9ffd80 ebc803d0 ec8f9300 eb9ffe18 ec8ef03b  ............;...
+    eb9ffd90 ebc803d0 00000002 eb9ffde8 eb9ffdd8  ................
+    eb9ffda0 ebfa0380 00000053 eb880f40 eb9ffdc0  ....S...@.......
+    eb9ffdb0 80000001 eb840c14 00000000 ebeeb3c1  ................
+    eb9ffdc0 ebf8735f eccbdcdc eb9ffe08 ecc67563  _s..........cu..
+    eb9ffdd0 80000001 00000000 ebc803d0 eb9fff10  ................
+    eb9ffde0 00000000 ebf94fb8 ebc803d0 eb9fff50  .....O......P...
+    eb9ffdf0 00000000 eb880f40 c7ea3dde eb840bc0  ....@....=......
+
+memory near esi ([anon:stack_and_tls:394]):
+    eb9ffd30 eb9ffd50 ecd002b0 eb9ffd58 eb9ffd4f  P.......X...O...
+    eb9ffd40 ebcc0b60 ebd00070 00000000 00c77732  `...p.......2w..
+    eb9ffd50 00000000 ebcc0b60 6e657314 72652064  ....`....send er
+    eb9ffd60 00726f72 eb880f30 c7ea3dde 00000000  ror.0....=......
+    eb9ffd70 eb840c14 eccbdcdc eb9ffe18 00000002  ................
+    eb9ffd80 ebc803d0 ec8f9300 eb9ffe18 ec8ef03b  ............;...
+    eb9ffd90 ebc803d0 00000002 eb9ffde8 eb9ffdd8  ................
+    eb9ffda0 ebfa0380 00000053 eb880f40 eb9ffdc0  ....S...@.......
+    eb9ffdb0 80000001 eb840c14 00000000 ebeeb3c1  ................
+    eb9ffdc0 ebf8735f eccbdcdc eb9ffe08 ecc67563  _s..........cu..
+    eb9ffdd0 80000001 00000000 ebc803d0 eb9fff10  ................
+    eb9ffde0 00000000 ebf94fb8 ebc803d0 eb9fff50  .....O......P...
+    eb9ffdf0 00000000 eb880f40 c7ea3dde eb840bc0  ....@....=......
+    eb9ffe00 eb840c50 eccbdcdc c7ea3dde eb9fff50  P........=..P...
+    eb9ffe10 eb9fff10 ec8f9300 eb9ffe58 ec8ef471  ........X...q...
+    eb9ffe20 ebc803d0 00000002 eb9fff50 eb9fff10  ........P.......
+
+memory near esp ([anon:stack_and_tls:394]):
+    eb9ffce0 0000000b 62768b48 eb9ffd28 6276742f  ....H.vb(.../tvb
+    eb9ffcf0 00000006 eb9ffd59 eb9ffd28 627673fa  ....Y...(....svb
+    eb9ffd00 eb9ffd59 0000000a eba004fe ec8f1728  Y...........(...
+    eb9ffd10 ebc803d0 eba04010 c7ea3dde 00000000  .....@...=......
+    eb9ffd20 ecd002b0 ecaea6b4 eb9ffd88 ecae7690  .............v..
+    eb9ffd30 eb9ffd50 ecd002b0 eb9ffd58 eb9ffd4f  P.......X...O...
+    eb9ffd40 ebcc0b60 ebd00070 00000000 00c77732  `...p.......2w..
+    eb9ffd50 00000000 ebcc0b60 6e657314 72652064  ....`....send er
+    eb9ffd60 00726f72 eb880f30 c7ea3dde 00000000  ror.0....=......
+    eb9ffd70 eb840c14 eccbdcdc eb9ffe18 00000002  ................
+    eb9ffd80 ebc803d0 ec8f9300 eb9ffe18 ec8ef03b  ............;...
+    eb9ffd90 ebc803d0 00000002 eb9ffde8 eb9ffdd8  ................
+    eb9ffda0 ebfa0380 00000053 eb880f40 eb9ffdc0  ....S...@.......
+    eb9ffdb0 80000001 eb840c14 00000000 ebeeb3c1  ................
+    eb9ffdc0 ebf8735f eccbdcdc eb9ffe08 ecc67563  _s..........cu..
+    eb9ffdd0 80000001 00000000 ebc803d0 eb9fff10  ................
+
+memory near eip (/vendor/bin/hw/vendor.eightman.cpu-service):
+    62767420 000000c7 ec830000 91e8570c 83000004  .........W......
+    62767430 548b10c4 c2800824 8b02b002 758b144d  ...T$.......M..u
+    62767440 c0b60f08 013cfaf6 e801940f 00000490  ......<.........
+    62767450 f0890689 5ef4658d c25d5b5f cccc0004  .....e.^_[].....
+    62767460 53e58955 f0e48356 e80c758b 00000000  U..SV....u......
+    62767470 d8c3815b 83000016 838d04ec ffffc842  [...........B...
+    62767480 6a006a50 0416e804 c4830000 38838d08  Pj.j...........8
+    62767490 50ffffc8 0486e856 c4830000 8dc03110  ...PV........1..
+    627674a0 5b5ef865 ccccc35d cccccccc cccccccc  e.^[]...........
+    627674b0 53e58955 f0e48356 8b10ec83 00e80875  U..SV.......u...
+    627674c0 5b000000 1685c381 34890000 045ee824  ...[.......4$.^.
+    627674d0 34890000 03f6e824 658d0000 5d5b5ef8  ...4$......e.^[]
+    627674e0 ccccccc3 cccccccc cccccccc cccccccc  ................
+    627674f0 53e58955 e4835657 20ec83f0 650c7d8b  U..SWV..... .}.e
+    62767500 000014a1 08758b00 000000e8 c3815b00  ......u......[..
+    62767510 0000163b 89104f8d 89182444 890c244c  ;....O..D$..L$..
+
+memory map (172 entries):
+    62764000-62765fff r--         0      2000  /vendor/bin/hw/vendor.eightman.cpu-service (BuildId: b45824c3821d7cb9c479a474053b1a9f) (load bias 0x1000)
+    62766000-62767fff r-x      1000      2000  /vendor/bin/hw/vendor.eightman.cpu-service (BuildId: b45824c3821d7cb9c479a474053b1a9f) (load bias 0x1000)
+    62768000-62768fff r--      2000      1000  /vendor/bin/hw/vendor.eightman.cpu-service (BuildId: b45824c3821d7cb9c479a474053b1a9f) (load bias 0x1000)
+    eb6bf000-eb6bffff ---         0      1000
+    eb6c0000-eb7befff rw-         0     ff000  [anon:stack_and_tls:3133]
+    eb7bf000-eb7bffff ---         0      1000
+    eb7c0000-eb8fffff rw-         0    140000  [anon:scudo:primary]
+    eb903000-eb903fff ---         0      1000
+    eb904000-eba02fff rw-         0     ff000  [anon:stack_and_tls:394]
+    eba03000-eba03fff ---         0      1000
+    ebc00000-ebd3ffff rw-         0    140000  [anon:scudo:primary]
+    ebd73000-ebd74fff r--         0      2000  /system/lib/libnetd_client.so (BuildId: ba612391f43f6d894c0261af628613cd) (load bias 0x1000)
+    ebd75000-ebd75fff ---         0      1000
+    ebd76000-ebd7afff r-x      2000      5000  /system/lib/libnetd_client.so (BuildId: ba612391f43f6d894c0261af628613cd) (load bias 0x1000)
+    ebd7b000-ebd7bfff r--      6000      1000  /system/lib/libnetd_client.so (BuildId: ba612391f43f6d894c0261af628613cd) (load bias 0x1000)
+    ebd7c000-ebd7cfff rw-      6000      1000  /system/lib/libnetd_client.so (BuildId: ba612391f43f6d894c0261af628613cd) (load bias 0x1000)
+    ebda2000-ebe05fff rw-         0     64000  [anon:linker_alloc]
+    ebe06000-ebe09fff r--         0      4000  /system/lib/liblog.so (BuildId: 0df48f5fff402bbbb70e1484852fc2e6) (load bias 0x1000)
+    ebe0a000-ebe13fff r-x      3000      a000  /system/lib/liblog.so (BuildId: 0df48f5fff402bbbb70e1484852fc2e6) (load bias 0x1000)
+    ebe14000-ebe14fff r--      c000      1000  /system/lib/liblog.so (BuildId: 0df48f5fff402bbbb70e1484852fc2e6) (load bias 0x1000)
+    ebe15000-ebe15fff rw-      c000      1000  /system/lib/liblog.so (BuildId: 0df48f5fff402bbbb70e1484852fc2e6) (load bias 0x1000)
+    ebe53000-ebe5ffff r--         0      d000  /apex/com.android.vndk.vS/lib/libutils.so (BuildId: e61b0f55ccdcd608229cf31ce76f2e38) (load bias 0x1000)
+    ebe60000-ebe6dfff r-x      c000      e000  /apex/com.android.vndk.vS/lib/libutils.so (BuildId: e61b0f55ccdcd608229cf31ce76f2e38) (load bias 0x1000)
+    ebe6e000-ebe6efff r--     19000      1000  /apex/com.android.vndk.vS/lib/libutils.so (BuildId: e61b0f55ccdcd608229cf31ce76f2e38) (load bias 0x1000)
+    ebe6f000-ebe6ffff rw-     19000      1000  /apex/com.android.vndk.vS/lib/libutils.so (BuildId: e61b0f55ccdcd608229cf31ce76f2e38) (load bias 0x1000)
+    ebe9f000-ebee2fff r--         0     44000  /apex/com.android.runtime/lib/bionic/libc.so (BuildId: caed0b233ad79633b03fb95fe52b9c00) (load bias 0x1000)
+    ebee3000-ebf92fff r-x     43000     b0000  /apex/com.android.runtime/lib/bionic/libc.so (BuildId: caed0b233ad79633b03fb95fe52b9c00) (load bias 0x1000)
+    ebf93000-ebf95fff r--     f2000      3000  /apex/com.android.runtime/lib/bionic/libc.so (BuildId: caed0b233ad79633b03fb95fe52b9c00) (load bias 0x1000)
+    ebf96000-ebf96fff rw-     f4000      1000  /apex/com.android.runtime/lib/bionic/libc.so (BuildId: caed0b233ad79633b03fb95fe52b9c00) (load bias 0x1000)
+    ebf97000-ebf9afff rw-         0      4000  [anon:.bss]
+    ebf9b000-ebf9bfff r--         0      1000  [anon:.bss]
+    ebf9c000-ec4b8fff rw-         0    51d000  [anon:.bss]
+    ec4d0000-ec4e0fff r--         0     11000  /apex/com.android.vndk.vS/lib/libbase.so (BuildId: b92f962e433d034250034e3422b04785) (load bias 0x1000)
+    ec4e1000-ec50efff r-x     10000     2e000  /apex/com.android.vndk.vS/lib/libbase.so (BuildId: b92f962e433d034250034e3422b04785) (load bias 0x1000)
+    ec50f000-ec510fff r--     3d000      2000  /apex/com.android.vndk.vS/lib/libbase.so (BuildId: b92f962e433d034250034e3422b04785) (load bias 0x1000)
+    ec511000-ec511fff rw-     3e000      1000  /apex/com.android.vndk.vS/lib/libbase.so (BuildId: b92f962e433d034250034e3422b04785) (load bias 0x1000)
+    ec542000-ec55bfff r--         0     1a000  /apex/com.android.runtime/lib/bionic/libm.so (BuildId: f6d45ad118242614b78f8216a5cdbfae) (load bias 0x1000)
+    ec55c000-ec577fff r-x     19000     1c000  /apex/com.android.runtime/lib/bionic/libm.so (BuildId: f6d45ad118242614b78f8216a5cdbfae) (load bias 0x1000)
+    ec578000-ec578fff r--     34000      1000  /apex/com.android.runtime/lib/bionic/libm.so (BuildId: f6d45ad118242614b78f8216a5cdbfae) (load bias 0x1000)
+    ec579000-ec579fff rw-     34000      1000  /apex/com.android.runtime/lib/bionic/libm.so (BuildId: f6d45ad118242614b78f8216a5cdbfae) (load bias 0x1000)
+    ec5bb000-ec5bbfff r--         0      1000  /system/lib/libcgrouprc.so (BuildId: 3dab41e524160aa44f558822b3942b5f) (load bias 0x1000)
+    ec5bc000-ec5bdfff r-x         0      2000  /system/lib/libcgrouprc.so (BuildId: 3dab41e524160aa44f558822b3942b5f) (load bias 0x1000)
+    ec5be000-ec5befff r--      1000      1000  /system/lib/libcgrouprc.so (BuildId: 3dab41e524160aa44f558822b3942b5f) (load bias 0x1000)
+    ec5bf000-ec5bffff rw-      1000      1000  /system/lib/libcgrouprc.so (BuildId: 3dab41e524160aa44f558822b3942b5f) (load bias 0x1000)
+    ec5c2000-ec608fff r--         0     47000  /apex/com.android.vndk.vS/lib/libc++.so (BuildId: 9245fac3fe9c96f1916a12f2cc965a3d) (load bias 0x1000)
+    ec609000-ec670fff r-x     46000     68000  /apex/com.android.vndk.vS/lib/libc++.so (BuildId: 9245fac3fe9c96f1916a12f2cc965a3d) (load bias 0x1000)
+    ec671000-ec674fff r--     ad000      4000  /apex/com.android.vndk.vS/lib/libc++.so (BuildId: 9245fac3fe9c96f1916a12f2cc965a3d) (load bias 0x1000)
+    ec675000-ec675fff rw-     b0000      1000  /apex/com.android.vndk.vS/lib/libc++.so (BuildId: 9245fac3fe9c96f1916a12f2cc965a3d) (load bias 0x1000)
+    ec676000-ec676fff rw-         0      1000  [anon:.bss]
+    ec6a5000-ec6a5fff r--         0      1000  /system/lib/libvndksupport.so (BuildId: 6b1480417f4647ca9077238d037c3712) (load bias 0x1000)
+    ec6a6000-ec6a6fff r-x         0      1000  /system/lib/libvndksupport.so (BuildId: 6b1480417f4647ca9077238d037c3712) (load bias 0x1000)
+    ec6a7000-ec6a7fff r--         0      1000  /system/lib/libvndksupport.so (BuildId: 6b1480417f4647ca9077238d037c3712) (load bias 0x1000)
+    ec6a8000-ec6a8fff rw-         0      1000  /system/lib/libvndksupport.so (BuildId: 6b1480417f4647ca9077238d037c3712) (load bias 0x1000)
+    ec6c2000-ec6ddfff r--         0     1c000  /apex/com.android.vndk.vS/lib/libprocessgroup.so (BuildId: 428aad1397320cbd924c7b627695378c) (load bias 0x1000)
+    ec6de000-ec717fff r-x     1b000     3a000  /apex/com.android.vndk.vS/lib/libprocessgroup.so (BuildId: 428aad1397320cbd924c7b627695378c) (load bias 0x1000)
+    ec718000-ec719fff r--     54000      2000  /apex/com.android.vndk.vS/lib/libprocessgroup.so (BuildId: 428aad1397320cbd924c7b627695378c) (load bias 0x1000)
+    ec71a000-ec71afff rw-     55000      1000  /apex/com.android.vndk.vS/lib/libprocessgroup.so (BuildId: 428aad1397320cbd924c7b627695378c) (load bias 0x1000)
+    ec743000-ec789fff r--         0     47000  /system/lib/libc++.so (BuildId: 5ce90f559b9a1a3b82dd978026d92133) (load bias 0x1000)
+    ec78a000-ec7f1fff r-x     46000     68000  /system/lib/libc++.so (BuildId: 5ce90f559b9a1a3b82dd978026d92133) (load bias 0x1000)
+    ec7f2000-ec7f5fff r--     ad000      4000  /system/lib/libc++.so (BuildId: 5ce90f559b9a1a3b82dd978026d92133) (load bias 0x1000)
+    ec7f6000-ec7f6fff rw-     b0000      1000  /system/lib/libc++.so (BuildId: 5ce90f559b9a1a3b82dd978026d92133) (load bias 0x1000)
+    ec7f7000-ec7f7fff rw-         0      1000  [anon:.bss]
+    ec816000-ec816fff r--         0      1000  /apex/com.android.runtime/lib/bionic/libdl.so (BuildId: 133acb5c93215c394f341d8cf31fc8db) (load bias 0x1000)
+    ec817000-ec817fff r-x         0      1000  /apex/com.android.runtime/lib/bionic/libdl.so (BuildId: 133acb5c93215c394f341d8cf31fc8db) (load bias 0x1000)
+    ec818000-ec818fff r--         0      1000  /apex/com.android.runtime/lib/bionic/libdl.so (BuildId: 133acb5c93215c394f341d8cf31fc8db) (load bias 0x1000)
+    ec819000-ec819fff ---         0      1000
+    ec81a000-ec81afff r--         0      1000  [anon:.bss]
+    ec850000-ec855fff r--         0      6000  /apex/com.android.vndk.vS/lib/libcutils.so (BuildId: 39094f238f1ff2d3e4784a283e468a93) (load bias 0x1000)
+    ec856000-ec85efff r-x      5000      9000  /apex/com.android.vndk.vS/lib/libcutils.so (BuildId: 39094f238f1ff2d3e4784a283e468a93) (load bias 0x1000)
+    ec85f000-ec860fff r--      d000      2000  /apex/com.android.vndk.vS/lib/libcutils.so (BuildId: 39094f238f1ff2d3e4784a283e468a93) (load bias 0x1000)
+    ec861000-ec861fff rw-      e000      1000  /apex/com.android.vndk.vS/lib/libcutils.so (BuildId: 39094f238f1ff2d3e4784a283e468a93) (load bias 0x1000)
+    ec885000-ec885fff r--         0      1000  /apex/com.android.runtime/lib/bionic/libdl_android.so (BuildId: 5bdaa0ae63300ef326d5d647a6877c6a) (load bias 0x1000)
+    ec886000-ec886fff r-x         0      1000  /apex/com.android.runtime/lib/bionic/libdl_android.so (BuildId: 5bdaa0ae63300ef326d5d647a6877c6a) (load bias 0x1000)
+    ec887000-ec887fff r--         0      1000  /apex/com.android.runtime/lib/bionic/libdl_android.so (BuildId: 5bdaa0ae63300ef326d5d647a6877c6a) (load bias 0x1000)
+    ec8e5000-ec8ecfff r--         0      8000  /system/lib/libbinder_ndk.so (BuildId: ab9399c5cd3b2b43964f69247d071538) (load bias 0x1000)
+    ec8ed000-ec8f7fff r-x      7000      b000  /system/lib/libbinder_ndk.so (BuildId: ab9399c5cd3b2b43964f69247d071538) (load bias 0x1000)
+    ec8f8000-ec8f9fff r--     11000      2000  /system/lib/libbinder_ndk.so (BuildId: ab9399c5cd3b2b43964f69247d071538) (load bias 0x1000)
+    ec8fa000-ec8fafff rw-     12000      1000  /system/lib/libbinder_ndk.so (BuildId: ab9399c5cd3b2b43964f69247d071538) (load bias 0x1000)
+    ec917000-ec917fff r--         0      1000  /apex/com.android.vndk.vS/lib/libhardware.so (BuildId: 35a9b73b7a6b048a58fa170c9b4e471b) (load bias 0x1000)
+    ec918000-ec918fff r-x         0      1000  /apex/com.android.vndk.vS/lib/libhardware.so (BuildId: 35a9b73b7a6b048a58fa170c9b4e471b) (load bias 0x1000)
+    ec919000-ec91afff r--         0      2000  /apex/com.android.vndk.vS/lib/libhardware.so (BuildId: 35a9b73b7a6b048a58fa170c9b4e471b) (load bias 0x1000)
+    ec94a000-ec95afff r--         0     11000  /system/lib/libbase.so (BuildId: 5568a1749e792151669b6f4de65499a9) (load bias 0x1000)
+    ec95b000-ec988fff r-x     10000     2e000  /system/lib/libbase.so (BuildId: 5568a1749e792151669b6f4de65499a9) (load bias 0x1000)
+    ec989000-ec98afff r--     3d000      2000  /system/lib/libbase.so (BuildId: 5568a1749e792151669b6f4de65499a9) (load bias 0x1000)
+    ec98b000-ec98bfff rw-     3e000      1000  /system/lib/libbase.so (BuildId: 5568a1749e792151669b6f4de65499a9) (load bias 0x1000)
+    ec9d7000-ec9f2fff r--         0     1c000  /system/lib/libprocessgroup.so (BuildId: e70c5172c45e5fd70989190221ced434) (load bias 0x1000)
+    ec9f3000-eca2cfff r-x     1b000     3a000  /system/lib/libprocessgroup.so (BuildId: e70c5172c45e5fd70989190221ced434) (load bias 0x1000)
+    eca2d000-eca2efff r--     54000      2000  /system/lib/libprocessgroup.so (BuildId: e70c5172c45e5fd70989190221ced434) (load bias 0x1000)
+    eca2f000-eca2ffff rw-     55000      1000  /system/lib/libprocessgroup.so (BuildId: e70c5172c45e5fd70989190221ced434) (load bias 0x1000)
+    eca5e000-eca6afff r--         0      d000  /system/lib/libutils.so (BuildId: 23e76cc122df5aa9e5b726c70a2452f9) (load bias 0x1000)
+    eca6b000-eca78fff r-x      c000      e000  /system/lib/libutils.so (BuildId: 23e76cc122df5aa9e5b726c70a2452f9) (load bias 0x1000)
+    eca79000-eca79fff r--     19000      1000  /system/lib/libutils.so (BuildId: 23e76cc122df5aa9e5b726c70a2452f9) (load bias 0x1000)
+    eca7a000-eca7afff rw-     19000      1000  /system/lib/libutils.so (BuildId: 23e76cc122df5aa9e5b726c70a2452f9) (load bias 0x1000)
+    eca9e000-ecaa3fff r--         0      6000  /system/lib/libcutils.so (BuildId: 02d8899c9e1dad3005584a399bd56c92) (load bias 0x1000)
+    ecaa4000-ecaadfff r-x      5000      a000  /system/lib/libcutils.so (BuildId: 02d8899c9e1dad3005584a399bd56c92) (load bias 0x1000)
+    ecaae000-ecaaffff r--      e000      2000  /system/lib/libcutils.so (BuildId: 02d8899c9e1dad3005584a399bd56c92) (load bias 0x1000)
+    ecab0000-ecab0fff rw-      f000      1000  /system/lib/libcutils.so (BuildId: 02d8899c9e1dad3005584a399bd56c92) (load bias 0x1000)
+    ecae4000-ecae6fff r--         0      3000  /vendor/lib/vendor.eightman.cpu-V1-ndk_platform.so (BuildId: d9a7b9ace9231363dcb7d9774babc941) (load bias 0x1000)
+    ecae7000-ecae9fff r-x      2000      3000  /vendor/lib/vendor.eightman.cpu-V1-ndk_platform.so (BuildId: d9a7b9ace9231363dcb7d9774babc941) (load bias 0x1000)
+    ecaea000-ecaeafff r--      4000      1000  /vendor/lib/vendor.eightman.cpu-V1-ndk_platform.so (BuildId: d9a7b9ace9231363dcb7d9774babc941) (load bias 0x1000)
+    ecaeb000-ecaebfff rw-      4000      1000  /vendor/lib/vendor.eightman.cpu-V1-ndk_platform.so (BuildId: d9a7b9ace9231363dcb7d9774babc941) (load bias 0x1000)
+    ecb30000-ecb6bfff r--         0     3c000  /apex/com.android.vndk.vS/lib/libbinder.so (BuildId: 898f52d8196071c9f5b382c1def44899) (load bias 0x1000)
+    ecb6c000-ecbb5fff r-x     3b000     4a000  /apex/com.android.vndk.vS/lib/libbinder.so (BuildId: 898f52d8196071c9f5b382c1def44899) (load bias 0x1000)
+    ecbb6000-ecbbdfff r--     84000      8000  /apex/com.android.vndk.vS/lib/libbinder.so (BuildId: 898f52d8196071c9f5b382c1def44899) (load bias 0x1000)
+    ecbbe000-ecbbefff rw-     8b000      1000  /apex/com.android.vndk.vS/lib/libbinder.so (BuildId: 898f52d8196071c9f5b382c1def44899) (load bias 0x1000)
+    ecbe7000-ecbe7fff r--         0      1000  /system/lib/libandroid_runtime_lazy.so (BuildId: 743dd21bda6b124bea0e610756873758) (load bias 0x1000)
+    ecbe8000-ecbe8fff r-x         0      1000  /system/lib/libandroid_runtime_lazy.so (BuildId: 743dd21bda6b124bea0e610756873758) (load bias 0x1000)
+    ecbe9000-ecbe9fff r--         0      1000  /system/lib/libandroid_runtime_lazy.so (BuildId: 743dd21bda6b124bea0e610756873758) (load bias 0x1000)
+    ecbea000-ecbeafff rw-         0      1000  /system/lib/libandroid_runtime_lazy.so (BuildId: 743dd21bda6b124bea0e610756873758) (load bias 0x1000)
+    ecbf5000-ecc14fff r--         0     20000  /dev/__properties__/u:object_r:heapprofd_prop:s0
+    ecc15000-ecc5cfff r--         0     48000  /system/lib/libbinder.so (BuildId: d403faada3e173c50869977da13a0f0b) (load bias 0x1000)
+    ecc5d000-eccb4fff r-x     47000     58000  /system/lib/libbinder.so (BuildId: d403faada3e173c50869977da13a0f0b) (load bias 0x1000)
+    eccb5000-eccbefff r--     9e000      a000  /system/lib/libbinder.so (BuildId: d403faada3e173c50869977da13a0f0b) (load bias 0x1000)
+    eccbf000-eccbffff rw-     a7000      1000  /system/lib/libbinder.so (BuildId: d403faada3e173c50869977da13a0f0b) (load bias 0x1000)
+    eccc6000-eccc6fff rw-         0      1000  [anon:bionic_alloc_small_objects]
+    ecce0000-eccfffff r--         0     20000  /dev/__properties__/u:object_r:libc_debug_prop:s0
+    ecd00000-ecd7ffff rw-         0     80000  [anon:scudo:primary]
+    ecd80000-ecd80fff rw-         0      1000  [anon:bionic_alloc_small_objects]
+    ecd8c000-ecd8cfff ---         0      1000
+    ecd8d000-ecd90fff rw-         0      4000  [anon:thread signal stack]
+    ecd91000-ecd93fff ---         0      3000  [anon:cfi shadow]
+    ecd94000-ecd94fff r--         0      1000  [anon:cfi shadow]
+    ecd95000-ecd97fff ---         0      3000  [anon:cfi shadow]
+    ecd98000-ecd98fff r--         0      1000  [anon:cfi shadow]
+    ecd99000-ecd99fff ---         0      1000
+    ecd9a000-ecd9dfff rw-         0      4000  [anon:thread signal stack]
+    ecd9e000-ecdbdfff r--         0     20000  /dev/__properties__/u:object_r:debug_prop:s0
+    ecdbe000-ecdddfff r--         0     20000  /dev/__properties__/properties_serial
+    ecdde000-ecdecfff r--         0      f000  /dev/__properties__/property_info
+    ecded000-ecdedfff ---         0      1000
+    ecdee000-ecdf0fff rw-         0      3000  [anon:stack_and_tls:main]
+    ecdf1000-ecdf1fff ---         0      1000
+    ecdf6000-ece15fff r--         0     20000  /dev/__properties__/u:object_r:build_prop:s0
+    ece16000-ece35fff r--         0     20000  /dev/__properties__/u:object_r:log_tag_prop:s0
+    ece36000-ece55fff r--         0     20000  /dev/__properties__/u:object_r:vendor_socket_hook_prop:s0
+    ece56000-eceb9fff r--         0     64000  [anon:linker_alloc]
+    eceba000-ecebbfff rw-         0      2000  [anon:bionic_alloc_small_objects]
+    ecebc000-ecebcfff r--         0      1000  [anon:atexit handlers]
+    ecebd000-ecf20fff r--         0     64000  [anon:linker_alloc]
+    ecf21000-ecf21fff rw-         0      1000  [anon:bionic_alloc_lob]
+    ecf22000-ecf2bfff rw-         0      a000  [anon:bionic_alloc_small_objects]
+    ecf2c000-ecf2dfff rw-         0      2000  [anon:bionic_alloc_small_objects]
+    ecf2e000-ecf4dfff r--         0     20000  /dev/__properties__/u:object_r:vndk_prop:s0
+    ecf4e000-ecf4efff rw-         0      1000  [anon:bionic_alloc_small_objects]
+    ecf4f000-ecfb2fff r--         0     64000  [anon:linker_alloc]
+    ecfb3000-ecfb3fff rw-         0      1000  [anon:bionic_alloc_small_objects]
+    ecfb4000-ecfd3fff r--         0     20000  /dev/__properties__/u:object_r:build_prop:s0
+    ecfd4000-ecff3fff r--         0     20000  /dev/__properties__/u:object_r:debug_prop:s0
+    ecff4000-ecff4fff ---         0      1000
+    ecff5000-ecffcfff rw-         0      8000
+    ecffd000-ecffdfff ---         0      1000
+    ecffe000-ed01dfff r--         0     20000  /dev/__properties__/properties_serial
+    ed01e000-ed01ffff rw-         0      2000  [anon:System property context nodes]
+    ed020000-ed02efff r--         0      f000  /dev/__properties__/property_info
+    ed02f000-ed092fff r--         0     64000  [anon:linker_alloc]
+    ed093000-ed094fff rw-         0      2000  [anon:bionic_alloc_small_objects]
+    ed095000-ed095fff r--         0      1000  [anon:atexit handlers]
+    ed096000-ed096fff ---         0      1000
+    ed097000-ed09afff rw-         0      4000  [anon:thread signal stack]
+    ed09b000-ed09bfff rw-         0      1000  [anon:arc4random data]
+    ed09c000-ed09dfff rw-         0      2000  [anon:System property context nodes]
+    ed09e000-ed09efff rw-         0      1000  [anon:arc4random data]
+    ed09f000-ed0a2fff r--         0      4000  [vvar]
+    ed0a3000-ed0a4fff r-x         0      2000  [vdso]
+    ed0a5000-ed0e8fff r--         0     44000  /apex/com.android.runtime/bin/linker (BuildId: 6497badce69322710733e924ca891696) (load bias 0x1000)
+    ed0e9000-ed1fbfff r-x     43000    113000  /apex/com.android.runtime/bin/linker (BuildId: 6497badce69322710733e924ca891696) (load bias 0x1000)
+    ed1fc000-ed200fff r--    155000      5000  /apex/com.android.runtime/bin/linker (BuildId: 6497badce69322710733e924ca891696) (load bias 0x1000)
+    ed201000-ed201fff rw-    159000      1000  /apex/com.android.runtime/bin/linker (BuildId: 6497badce69322710733e924ca891696) (load bias 0x1000)
+    ed202000-ed204fff rw-         0      3000  [anon:.bss]
+    ed205000-ed205fff r--         0      1000  [anon:.bss]
+    ed206000-ed20bfff rw-         0      6000  [anon:.bss]
+    fff79000-fff99fff rw-         0     21000  [stack]
+--------- tail end of log main
+04-29 09:31:45.371   389   389 I vendor.eightman.cpu-service: Cpu aidl service for eightman is starting.,,
+04-29 09:31:45.419   389   389 I vendor.eightman.cpu-service: Initialized eightman cpu
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(powersave
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: )
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(conservative)
+04-29 02:34:53.237   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(conservative
+04-29 02:34:53.237   389   394 I vendor.eightman.cpu-service: )
+04-29 02:34:56.240   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(conservative)
+04-29 02:34:57.711   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(conservative
+04-29 02:34:57.711   389   394 I vendor.eightman.cpu-service: )
+04-29 02:34:58.971   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(powersave)
+04-29 02:35:00.206   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(powersave
+04-29 02:35:00.206   389   394 I vendor.eightman.cpu-service: )
+04-29 02:35:04.021   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(schedutil)
+04-29 02:35:05.530   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(send error)
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 389, tid: 389, name: Binder:389_2  >>> /vendor/bin/hw/vendor.eightman.cpu-service <<<
+uid: 1000
+    eax fffffe00  ebx 00000004  ecx c0306201  edx fff97958
+    edi eb842870  esi eb8428c4
+    ebp fff97908  esp fff978ac  eip ed0a3509
+
+backtrace:
+      #00 pc 00000509  [vdso] (__kernel_vsyscall+9)
+      #01 pc 000ce21c  /apex/com.android.runtime/lib/bionic/libc.so (__ioctl+28) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #02 pc 0008186a  /apex/com.android.runtime/lib/bionic/libc.so (ioctl+58) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #03 pc 00052cbb  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+315) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #04 pc 0005303a  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+42) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #05 pc 00053c2f  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+79) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #06 pc 00010c75  /system/lib/libbinder_ndk.so (ABinderProcess_joinThreadPool+37) (BuildId: ab9399c5cd3b2b43964f69247d071538)
+      #07 pc 00002971  /vendor/bin/hw/vendor.eightman.cpu-service (main+513) (BuildId: b45824c3821d7cb9c479a474053b1a9f)
+      #08 pc 00052393  /apex/com.android.runtime/lib/bionic/libc.so (__libc_init+115) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 389, tid: 3133, name: Binder:389_3  >>> /vendor/bin/hw/vendor.eightman.cpu-service <<<
+uid: 1000
+    eax fffffe00  ebx 00000004  ecx c0306201  edx eb7bbfb8
+    edi eb842980  esi eb8429d4
+    ebp eb7bbf68  esp eb7bbf0c  eip ed0a3509
+
+backtrace:
+      #00 pc 00000509  [vdso] (__kernel_vsyscall+9)
+      #01 pc 000ce21c  /apex/com.android.runtime/lib/bionic/libc.so (__ioctl+28) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #02 pc 0008186a  /apex/com.android.runtime/lib/bionic/libc.so (ioctl+58) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #03 pc 00052cbb  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+315) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #04 pc 0005303a  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+42) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #05 pc 00053c2f  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+79) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #06 pc 00084599  /system/lib/libbinder.so (android::PoolThread::threadLoop()+41) (BuildId: d403faada3e173c50869977da13a0f0b)
+      #07 pc 00013116  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+358) (BuildId: 23e76cc122df5aa9e5b726c70a2452f9)
+      #08 pc 000127ec  /system/lib/libutils.so (thread_data_t::trampoline(thread_data_t const*)+476) (BuildId: 23e76cc122df5aa9e5b726c70a2452f9)
+      #09 pc 000e7744  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+100) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+      #10 pc 00078d27  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+71) (BuildId: caed0b233ad79633b03fb95fe52b9c00)
+
+open files:
+    fd 0: /dev/null (unowned)
+    fd 1: /dev/null (unowned)
+    fd 2: /dev/null (unowned)
+    fd 3: /dev/binderfs/vndbinder (unowned)
+    fd 4: /dev/binderfs/binder (unowned)
+    fd 5: socket:[34249] (unowned)
+--------- log main
+04-29 09:31:45.371   389   389 I vendor.eightman.cpu-service: Cpu aidl service for eightman is starting.,,
+04-29 09:31:45.419   389   389 I vendor.eightman.cpu-service: Initialized eightman cpu
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(powersave
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: )
+04-29 09:32:20.526   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(conservative)
+04-29 02:34:53.237   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(conservative
+04-29 02:34:53.237   389   394 I vendor.eightman.cpu-service: )
+04-29 02:34:56.240   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(conservative)
+04-29 02:34:57.711   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(conservative
+04-29 02:34:57.711   389   394 I vendor.eightman.cpu-service: )
+04-29 02:34:58.971   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(powersave)
+04-29 02:35:00.206   389   394 I vendor.eightman.cpu-service: Cpu::getScalingGovernor data=(powersave
+04-29 02:35:00.206   389   394 I vendor.eightman.cpu-service: )
+04-29 02:35:04.021   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(schedutil)
+04-29 02:35:05.530   389   394 I vendor.eightman.cpu-service: Cpu::setScalingGovernor data=(send error)
