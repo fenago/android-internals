@@ -1,0 +1,26 @@
+android_app {
+    name: "EightmanServices",
+    certificate: "platform", // to be a persistent app
+    vendor: true,
+    sdk_version: "current",
+
+    jni_libs: ["libeightman"],
+
+    libs: [
+        "com.eightman",
+    ],
+
+    static_libs: [
+        "androidx-constraintlayout_constraintlayout",
+        "androidx-constraintlayout_constraintlayout-solver",
+    ],
+
+    // Don't package native libs in the APK
+    use_embedded_native_libs: false,
+
+    resource_dirs: ["res"],
+
+    srcs: [
+        "src/java/**/*.java",
+    ],
+}
